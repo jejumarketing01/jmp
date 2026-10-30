@@ -1,0 +1,31 @@
+---
+interface Props {
+  activePage?: 'services' | 'pricing' | 'cases' | 'about' | 'blog' | 'contact';
+}
+
+const { activePage } = Astro.props;
+---
+
+<header class="site-header" id="top">
+  <div class="container site-header__inner">
+    <a class="logo" href="/" aria-label="제주마케팅파트너스 홈">
+      <span class="logo__ko">제주마케팅파트너스</span>
+      <span class="logo__en" aria-hidden="true">JEJU MARKETING PARTNERS</span>
+    </a>
+    <nav class="gnb" aria-label="주 메뉴">
+      <ul class="gnb__list">
+        <li><a class="gnb__link" href="/services" aria-current={activePage === 'services' ? 'page' : undefined}>서비스</a></li>
+        <li><a class="gnb__link" href="/pricing" aria-current={activePage === 'pricing' ? 'page' : undefined}>가격</a></li>
+        <li><a class="gnb__link" href="/cases" aria-current={activePage === 'cases' ? 'page' : undefined}>성공사례</a></li>
+        <li><a class="gnb__link" href="/about" aria-current={activePage === 'about' ? 'page' : undefined}>소개</a></li>
+        <li><a class="gnb__link" href="/blog" aria-current={activePage === 'blog' ? 'page' : undefined}>블로그</a></li>
+        <li><a class="gnb__link" href="/contact" aria-current={activePage === 'contact' ? 'page' : undefined}>문의</a></li>
+      </ul>
+    </nav>
+    <a class="header-tel" href="tel:010-7538-5083">010-7538-5083</a>
+  </div>
+  <button class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="menu-panel" data-menu-open>
+    <span class="menu-toggle__bars" aria-hidden="true"></span>
+    <span class="sr-only">메뉴 열기</span>
+  </button>
+</header>

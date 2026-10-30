@@ -1,6 +1,8 @@
 # 디자인 시스템
 
-모든 값은 `assets/css/design-system.css`의 토큰이 원본이다. 이 문서는 쓰는 법만 적는다. 실제 모양은 `styleguide.html`에서 본다.
+모든 값은 `public/assets/css/design-system.css`의 토큰이 원본이다. 이 문서는 쓰는 법만 적는다. 참고용 마크업은 `src/internal/styleguide.astro`에 있으며 배포하지 않는다.
+
+페이지 마크업은 `src/pages/*.astro`, 공통 문서 구조는 `src/layouts/BaseLayout.astro`, 공통 영역은 `src/components/*.astro`에서 관리한다. 클래스 기반 디자인 시스템은 Astro 컴포넌트 안에서도 아래 마크업을 그대로 사용한다.
 
 ## 원칙 (Borgholm에서 가져온 것)
 
@@ -50,7 +52,7 @@
 | 번호 목록 | `ol.num-list` | 01·02·03 번호가 붙는 항목 |
 | 숫자 | `.stat` > `.stat__num` + `.stat__label` | 큰 숫자, 단위는 `<em>` |
 | 문의 띠 | `.section--peach.cta-band` | 주황 제목 + 버튼 한 줄 |
-| 가로 줄 | `ul.rail[data-rail="이름"]` + `.rail-nav[data-rail-nav="이름"]` | 옆으로 넘기는 카드. 이전/다음 버튼은 `main.js`가 연결 |
+| 가로 줄 | `ul.rail[data-rail="이름"]` + `.rail-nav[data-rail-nav="이름"]` | 옆으로 넘기는 카드. 이전/다음 버튼은 `public/assets/js/main.js`가 연결 |
 | 이미지 자리 | `.img-slot.ratio-*` | 사진 전까지 쓰는 회색 박스. 아래 참고 |
 | 메뉴 패널 | `dialog#menu-panel` | 오른쪽에서 열리는 메뉴·연락처 |
 | 플로팅 | `.floating` > `.fab--kakao`, `.fab--top` | 카카오톡, 맨 위로 |
@@ -61,7 +63,7 @@
 | 2단 블록 | `.split` > `header.split__head`(라벨·H2·`.split__lead`) + 내용 | 서브 페이지 본문 기본형. 왼쪽 제목이 PC에서 따라옴. 라벨은 `.split__label`(번호 + 영문, `aria-hidden`) |
 | 안내 상자 | `aside.notice-box` | 왼쪽 주황 선 상자. 배경은 섹션에 맞춰 자동(흰/회색) |
 | 정의 표 | `dl.def-list` > `div` > `dt`+`dd` | 항목 / 내용 줄. 계약 조건 같은 목록 |
-| 하단 문의 | `section.contact` | 모든 페이지 마지막 섹션. 마크업은 `services.html`에서 그대로 복사 |
+| 하단 문의 | `section.contact` | `BaseLayout`의 `showContactCta`로 표시. 마크업은 `src/components/ContactCta.astro`에서 관리 |
 
 ## 이미지 자리
 
@@ -74,7 +76,7 @@
 사진이 생기면 이렇게 바꾼다. 비율 클래스는 남겨서 레이아웃이 흔들리지 않게 한다.
 
 ```html
-<img class="img-cover ratio-4x3" src="assets/img/파일명.jpg" alt="사진 설명" width="1200" height="900" loading="lazy">
+<img class="img-cover ratio-4x3" src="/assets/img/파일명.jpg" alt="사진 설명" width="1200" height="900" loading="lazy">
 ```
 
 첫 화면(메인 배너) 사진에는 `loading="lazy"`를 빼고 `fetchpriority="high"`를 넣는다. 비율 클래스: `ratio-16x10`, `4x3`, `3x4`, `1x1`, `21x9`, `16x9`, `9x16`(세로 영상).
@@ -90,9 +92,9 @@
 7. 안심 조건 — 살구색
 8. 하단 문의 — 흰 바탕, 가운데 세로선으로 나눈 2단
 
-## 서브 페이지 구성 패턴 (`services.html` 기준)
+## 서브 페이지 구성 패턴 (`src/pages/services.astro` 기준)
 
-서브 페이지는 `pricing.html`(가장 최근, 공통 컴포넌트만 사용)을 복사해서 시작한다. `services.html`의 `.svc__*`는 `.split`과 같은 모양의 옛 이름이다.
+서브 페이지는 `src/pages/pricing.astro`의 페이지 구성과 `BaseLayout` props를 참고해 시작한다. 공통 헤더·메뉴·푸터·플로팅 버튼은 복사하지 않는다. `src/pages/services.astro`의 `.svc__*`는 `.split`과 같은 모양의 옛 이름이다.
 
 1. 인트로 — `.page-intro`. 흰 바탕, 왼쪽 H1·설명·바로가기 + 오른쪽 사진
 2. 내용 블록 — `.section` + 2단(왼쪽 5 : 오른쪽 7). 왼쪽 제목은 PC에서 스크롤해도 따라오게(sticky) 고정

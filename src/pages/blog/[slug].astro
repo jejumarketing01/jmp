@@ -1,0 +1,38 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+
+type BlogEntry = CollectionEntry<'blog'>;
+
+export const getStaticPaths = (async () => {
+  const posts = (await getCollection('blog', ({ data }) => !data.draft))
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      previousPost: posts[index + 1],
+      nextPost: posts[index - 1],
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  post: BlogEntry;
+  previousPost?: BlogEntry;
+  nextPost?: BlogEntry;
+}
+
+const { post, previousPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BlogPostLayout
+  {...post.data}
+  previousPost={previousPost ? { id: previousPost.id, title: previousPost.data.title } : undefined}
+  nextPost={nextPost ? { id: nextPost.id, title: nextPost.data.title } : undefined}
+>
+  <Content />
+</BlogPostLayout>

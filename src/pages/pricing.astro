@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const page = {
+  "title": "가격 | 제주마케팅파트너스 · 홍보 영상 촬영·광고 관리 비용",
+  "description": "제주마케팅파트너스 가격 안내. 초기 기획 및 촬영 100만원, 20초 홍보 영상 50만원, 광고 관리 채널당 월 5만원(부가세 별도). 한 달 단위 계약, 위약금 없음. 광고비는 따로 듭니다.",
+  "canonical": "https://jejumarketing.co.kr/pricing",
+  "ogTitle": "가격 | 제주마케팅파트너스",
+  "ogDescription": "얼마나 드는지 먼저 알려드립니다. 필요한 것만 골라서 맡기실 수 있습니다.",
+  "bodyClass": "page-pricing",
+  "pageStylesheet": "/assets/css/pages/pricing.css",
+  "activePage": "pricing",
+  "showContactCta": true
+} as const;
+---
+
+<BaseLayout {...page}>
+
+    <!-- ================= 1. 인트로 ================= -->
+    <section class="page-intro" aria-labelledby="page-title">
+      <div class="container page-intro__inner">
+        <div class="page-intro__copy">
+          <p class="eyebrow" aria-hidden="true">Pricing</p>
+          <h1 class="display" id="page-title"><span class="line">얼마나 드는지</span> <span class="accent">먼저 알려드립니다</span></h1>
+          <div class="lead page-intro__lead">
+            <p>필요한 것만 골라서 맡기실 수 있습니다.</p>
+            <p>광고비는 따로 듭니다.</p>
+          </div>
+          <nav aria-label="가격 페이지 바로가기">
+            <ul class="jump-links">
+              <li><a href="#price"><span>01</span><span>서비스 가격</span></a></li>
+              <li><a href="#start"><span>02</span><span>예산이 부담되신다면</span></a></li>
+              <li><a href="#terms"><span>03</span><span>계약 조건</span></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="page-intro__visual">
+          <div class="img-slot ratio-16x10" role="img" aria-label="상담 테이블에서 사장님께 가격을 설명하는 모습">
+            <p class="img-slot__text"><strong>PRICE-HERO · 16:10 · 1600×1000</strong>가게 테이블에서 대표가 사장님께 종이나 태블릿으로 가격을 짚어 설명하는 모습</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. 서비스 가격 ================= -->
+    <section class="section section--soft price" id="price" aria-labelledby="price-title">
+      <div class="container split">
+        <header class="split__head reveal">
+          <p class="split__label" aria-hidden="true"><span>01</span> Price</p>
+          <h2 class="h2" id="price-title">서비스 <span class="accent">가격</span></h2>
+          <div class="split__lead">
+            <p>모든 금액은 부가세 별도입니다.</p>
+          </div>
+          <a class="link-arrow" href="/services">서비스 자세히 보기</a>
+        </header>
+
+        <div class="price__body">
+          <table class="price-table reveal">
+            <caption class="sr-only">서비스 가격 (부가세 별도)</caption>
+            <thead>
+              <tr>
+                <th scope="col">서비스</th>
+                <th scope="col">하는 일</th>
+                <th scope="col">금액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">초기 기획 및 촬영</th>
+                <td>사전 미팅 2회, 촬영 1회(2시간 30분), 자료 조사, 영상 기획</td>
+                <td class="price-table__amount"><strong>100</strong>만원</td>
+              </tr>
+              <tr id="video">
+                <th scope="row">20초 홍보 영상 제작</th>
+                <td>영상 기획, 인스타·유튜브 광고에 쓸 20초 영상 1편</td>
+                <td class="price-table__amount"><strong>50</strong>만원</td>
+              </tr>
+              <tr>
+                <th scope="row">촬영</th>
+                <td>1회 2시간 30분</td>
+                <td class="price-table__amount"><strong>50</strong>만원</td>
+              </tr>
+              <tr id="ads">
+                <th scope="row">광고 관리</th>
+                <td>네이버·인스타·페이스북·유튜브 광고 관리, 광고비 결제 관리, 매달 보고서</td>
+                <td class="price-table__amount"><span class="price-table__unit">채널당 월</span> <strong>5</strong>만원</td>
+              </tr>
+              <tr>
+                <th scope="row">광고 계정 만들기</th>
+                <td>유튜브 채널 만들기, 인스타·페이스북 광고 계정 만들기, 광고비 결제 설정</td>
+                <td class="price-table__amount"><span class="price-table__unit">채널당</span> <strong>10</strong>만원</td>
+              </tr>
+              <tr>
+                <th scope="row">인플루언서 섭외</th>
+                <td>후보 정리, 섭외, 가게 소개 전달, 일정 조정, 영상 확인</td>
+                <td class="price-table__amount"><span class="price-table__unit">인플루언서 비용의</span> <strong>15</strong>%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="price__note reveal">인플루언서 섭외는 인플루언서에게 드리는 비용의 15%를 수수료로 받습니다.</p>
+
+          <aside class="notice-box price__ad reveal" aria-labelledby="adcost-title">
+            <h3 class="h3" id="adcost-title">광고비는 따로 듭니다</h3>
+            <p>네이버·인스타 등에 직접 내시는 돈입니다.</p>
+            <p>위 금액에는 들어 있지 않습니다.</p>
+            <p>얼마를 쓸지는 가게 상황에 맞춰 함께 정합니다.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. 예산 · 시작 예시 ================= -->
+    <section class="section section--peach start" id="start" aria-labelledby="budget-title">
+      <div class="container split">
+        <header class="split__head reveal">
+          <p class="split__label" aria-hidden="true"><span>02</span> Start</p>
+          <h2 class="h2" id="budget-title">예산이 <span class="accent">부담되신다면</span></h2>
+          <div class="split__lead">
+            <p>영상 한 편부터 시작하셔도 됩니다.</p>
+            <p>가게 형편에 맞지 않는 구성은 권하지 않습니다.</p>
+          </div>
+        </header>
+
+        <article class="estimate reveal" aria-labelledby="estimate-title">
+          <h3 class="estimate__title" id="estimate-title">보통 이렇게 시작하십니다</h3>
+          <p class="estimate__label">처음 시작하실 때</p>
+          <dl class="estimate__rows">
+            <div><dt>초기 기획 및 촬영</dt><dd>100만원</dd></div>
+            <div><dt>20초 홍보 영상 1편</dt><dd>+ 50만원</dd></div>
+          </dl>
+          <dl class="estimate__total">
+            <div><dt>첫 달 합계</dt><dd><strong>150</strong>만원</dd></div>
+          </dl>
+          <ul class="estimate__notes">
+            <li>부가세 별도</li>
+            <li>광고는 들어 있지 않습니다</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= 4. 계약 조건 ================= -->
+    <section class="section section--soft" id="terms" aria-labelledby="terms-title">
+      <div class="container split">
+        <header class="split__head reveal">
+          <p class="split__label" aria-hidden="true"><span>03</span> Terms</p>
+          <h2 class="h2" id="terms-title">계약 조건</h2>
+          <div class="split__lead">
+            <p>시작하기 전에 확인해 주세요.</p>
+          </div>
+          <ul class="terms-badges">
+            <li>한 달 단위 계약</li>
+            <li>7일 안에 전액 환불</li>
+            <li>위약금 없음</li>
+          </ul>
+        </header>
+
+        <dl class="def-list reveal">
+          <div><dt>계약 단위</dt><dd>한 달</dd></div>
+          <div><dt>결제</dt><dd>계약할 때 먼저 결제합니다</dd></div>
+          <div><dt>영상 전달</dt><dd>계약 후 7일 안</dd></div>
+          <div><dt>수정</dt><dd>2회까지 무료</dd></div>
+          <div><dt>전액 환불</dt><dd><p>작업을 시작하기 전, 계약 후 7일 안에 취소하시면 전액 돌려드립니다</p><p>저희 잘못으로 영상을 드리지 못한 경우</p></dd></div>
+          <div><dt>부분 환불</dt><dd>영상을 받으신 뒤 그만두시면, 진행한 만큼 빼고 돌려드립니다</dd></div>
+          <div><dt>해지</dt><dd>일주일 전에 알려주세요. 위약금은 없습니다</dd></div>
+          <div><dt>환불 신청</dt><dd>카카오톡 채널로 신청해 주세요</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= 5. 하단 문의 (모든 페이지 공통) ================= -->
+</BaseLayout>

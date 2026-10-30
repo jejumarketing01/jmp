@@ -1,0 +1,83 @@
+---
+import ContactCta from '../components/ContactCta.astro';
+import FloatingActions from '../components/FloatingActions.astro';
+import Header from '../components/Header.astro';
+import MenuPanel from '../components/MenuPanel.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogTitle: string;
+  ogDescription: string;
+  bodyClass: string;
+  pageStylesheet: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  activePage?: 'services' | 'pricing' | 'cases' | 'about' | 'blog' | 'contact';
+  showContactCta?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogTitle,
+  ogDescription,
+  bodyClass,
+  pageStylesheet,
+  ogType = 'website',
+  ogImage = '/assets/img/og-image.jpg',
+  activePage,
+  showContactCta = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <!-- TODO: 실제 도메인 확인 후 수정 -->
+  <link rel="canonical" href={canonical}>
+  <meta property="og:type" content={ogType}>
+  <meta property="og:site_name" content="제주마케팅파트너스">
+  <meta property="og:title" content={ogTitle}>
+  <meta property="og:description" content={ogDescription}>
+  <!-- TODO: OG 이미지 1200×630 준비 후 경로 수정 -->
+  <meta property="og:image" content={ogImage}>
+  <meta name="theme-color" content="#f23902">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href={pageStylesheet}>
+  <script>document.documentElement.classList.add('js');</script>
+  <slot name="head" />
+</head>
+<body class={bodyClass}>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <!-- ================= 헤더 ================= -->
+  <Header activePage={activePage} />
+
+  <!-- 메뉴 패널: 모바일에서는 메뉴 + 연락처, PC에서는 연락처 -->
+  <MenuPanel activePage={activePage} />
+
+  <main id="main">
+    <slot />
+    {showContactCta && <ContactCta />}
+  </main>
+
+  <!-- ================= 푸터 ================= -->
+  <SiteFooter />
+
+  <!-- ================= 플로팅 버튼 ================= -->
+  <FloatingActions />
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

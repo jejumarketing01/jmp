@@ -1,0 +1,590 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const page = {
+  "title": "문의 | 제주마케팅파트너스 · 상담 신청, 오시는 길, 자주 묻는 질문",
+  "description": "제주에 있는 가게 홍보 회사 제주마케팅파트너스 상담 신청. 카카오톡·전화 010-7538-5083. 제주시 연북로 161, 2층 215호 (전용 주차). 제주 안 출장비 없음. 가격·계약·광고 효과 자주 묻는 질문.",
+  "canonical": "https://jejumarketing.co.kr/contact",
+  "ogTitle": "문의 | 제주마케팅파트너스",
+  "ogDescription": "편한 방법으로 연락 주세요. 상담 신청을 남기시면 전화로 먼저 안내드립니다.",
+  "bodyClass": "page-contact",
+  "pageStylesheet": "/assets/css/pages/contact.css",
+  "activePage": "contact"
+} as const;
+---
+
+<BaseLayout {...page}>
+  <Fragment slot="head">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "광고를 하면 매출이 오를까요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "오른 가게도 있고, 아닌 가게도 있습니다. 제주시 도두동 전복 전문점은 일매출 약 100만원에서 약 300만원이 됐습니다. 제주시 아라동 재활PT·요가는 오픈 첫 달 매출 1,000만원에서 둘째 달 1,500만원이 됐습니다. 손님이 안 오는 게 광고 때문이 아닐 때도 많아서, 메뉴·가격·간판을 먼저 살펴봅니다. 매출 상승을 약속하지는 않습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "광고는 얼마나 오래 해야 하나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "한 달 단위로 계약합니다. 한 달 해보고 정하셔도 됩니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "다른 가게는 매출이 얼마나 올랐나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "소플러스 제주노형공항점은 4개월 총매출이 33.6% 늘었습니다. 성산 갈치조림 전문점은 월매출 3,000만원에서 1억 3,000만원이 됐습니다. 가게마다 결과는 다릅니다. 12곳 사례는 성공사례에서 보실 수 있습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "어떤 광고가 효과가 좋나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "가게마다 다릅니다. 네이버 플레이스·파워링크는 가게를 찾는 손님에게 보입니다. 인스타·유튜브는 제주 여행을 준비하는 사람에게 보입니다. 상담 때 가게에 맞는 광고를 정합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "인스타·유튜브 광고 효과가 있나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "관광객은 제주에 오기 전에 갈 가게를 정합니다. 인스타·유튜브 광고로 이분들에게 가게 영상을 보여줍니다. 효과는 매달 숫자로 보여드립니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "영상 촬영은 얼마나 걸리나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "촬영은 한 번에 2시간 30분입니다. 영업에 지장 없는 시간에 갑니다. 계약 후 7일 안에 영상을 드리고, 두 번까지 무료로 고쳐 드립니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "광고비는 한 달에 어느 정도 써야 하나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "가게 상황에 맞춰 함께 정합니다. 광고비는 네이버·인스타 등에 직접 내시는 돈이라 저희 비용에 들어 있지 않습니다. 제주는 클릭당 광고 단가가 높은 편입니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "광고 관리 비용은 얼마인가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "광고 관리는 채널당 월 5만원, 광고 계정 만들기는 채널당 10만원입니다. 부가세와 광고비는 따로입니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "예산에 맞춰 주실 수 있나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "필요한 것만 골라서 맡기실 수 있습니다. 영상 한 편부터 시작하셔도 됩니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "촬영비는 얼마인가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "초기 기획 및 촬영은 100만원, 촬영만 하면 1회 50만원입니다. 20초 홍보 영상 제작은 50만원입니다. 부가세는 따로입니다. 자세한 가격은 가격에서 보실 수 있습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "계약 기간이 정해져 있나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "한 달 단위로 계약합니다. 6개월, 1년으로 묶지 않습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "중간에 그만두면 환불되나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "작업을 시작하기 전, 계약 후 7일 안에 취소하시면 전액 돌려드립니다. 영상을 받으신 뒤 그만두시면 진행한 만큼 빼고 돌려드립니다. 위약금은 없습니다. 일주일 전에 알려주세요."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "매출 관리도 같이 해주시나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "네. 매달 결과를 설명하고 보고서를 드립니다. 매출 밀착 관리는 가게마다 할 일이 달라 상담 때 가격을 안내합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "컨설팅도 하시나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "네. 메뉴·가격·간판을 살펴 장사가 안 되는 이유를 찾아드립니다. 필요하면 간판·인테리어 업체를 연결해 드립니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "플레이스 상위 노출 작업도 하시나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "네이버 플레이스 광고와 파워링크를 관리합니다. 순위는 네이버가 정합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "플레이스 상위 노출이 보장되나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "보장하지 않습니다. 순위는 네이버가 정하고, 주변 가게 상황에 따라 바뀝니다. 보장한다는 곳은 조심하시는 게 좋습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "챗GPT에 우리 가게가 나오게 할 수 있나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "네, 하고 있습니다. 챗GPT·제미나이 같은 AI에 물었을 때 가게가 나오도록 돕습니다. 방법과 비용은 상담 때 안내드립니다. AI 답변에 나오는 것을 보장하지는 않습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "카드뉴스도 만들어 주시나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "네, 만들어 드립니다. 가격은 상담 때 안내드립니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "블로그 글이나 체험단도 해주시나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "하지 않습니다. 블로그 글 대행, 블로그 광고, 체험단 섭외는 하지 않습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "홈페이지 제작도 하시나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "하지 않습니다. 홍보 영상과 광고, 컨설팅에 집중합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "출장비가 있나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "제주 안에서는 출장비가 없습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "제주 밖에서도 촬영하시나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "제주 밖 촬영은 하지 않습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "문의하면 어떻게 진행되나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "문의 → 전화 통화 → 만나서 계약 → 사전 미팅·기획 → 촬영 → 매달 관리 순서입니다. 영상은 계약 후 7일 안에 드립니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "찍을 게 별로 없는데 영상이 나올까요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "사전 미팅에서 가게를 보고 무엇을 찍을지 함께 정합니다. 메뉴, 만드는 과정, 사장님 이야기도 좋은 소재가 됩니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "음식점이 아니어도 되나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "됩니다. 필라테스·PT, 옷가게·소품샵, 에스테틱·뷰티처럼 매장이 있으면 어디든 됩니다. 병원·법률 같은 전문직은 하지 않습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "사장님이 꼭 영상에 나와야 하나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "나오시는 편이 좋습니다. 손님은 가게보다 사람을 기억하기 때문입니다. 말을 잘 못하셔도 괜찮습니다. 할 말은 촬영 전에 정리해 드립니다. 어려우시면 손이나 뒷모습만 담을 수도 있습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "나쁜 후기가 달렸는데 그냥 둬도 될까요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "그냥 두지 않는 게 좋습니다. 답글을 달고, 좋은 후기가 쌓이도록 해서 아래로 밀어냅니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "보통 얼마나 오래 맡기시나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "평균 1~5년 함께합니다. 다음 달에도 다시 맡기시는 가게가 90%입니다."
+   }
+  }
+ ]
+}
+  </script>
+  </Fragment>
+
+    <!-- ================= 1. 인트로: 연락 방법 3가지 ================= -->
+    <section class="page-intro contact-intro" aria-labelledby="page-title">
+      <div class="container page-intro__inner">
+        <div class="page-intro__copy">
+          <p class="eyebrow" aria-hidden="true">Contact</p>
+          <h1 class="display" id="page-title"><span class="line">편한 방법으로</span> <span class="accent">연락 주세요</span></h1>
+          <div class="lead page-intro__lead">
+            <p>카카오톡·전화로 바로 연락하셔도 됩니다.</p>
+            <p>상담 신청을 남기시면 전화로 먼저 안내드립니다.</p>
+          </div>
+        </div>
+        <ol class="ways">
+          <li class="way reveal">
+            <!-- TODO: 카카오톡 채널 주소로 교체 -->
+            <a class="way__link" href="https://pf.kakao.com/" data-todo="kakao-url" target="_blank" rel="noopener">
+              <span class="way__num" aria-hidden="true">01</span>
+              <span class="way__title">카카오톡</span>
+              <span class="way__text">카카오톡 채널에서 바로 물어보기<span class="sr-only"> (새 창)</span></span>
+            </a>
+          </li>
+          <li class="way reveal">
+            <a class="way__link" href="tel:010-7538-5083">
+              <span class="way__num" aria-hidden="true">02</span>
+              <span class="way__title">전화</span>
+              <span class="way__text"><strong>010-7538-5083</strong> 평일 영업시간에 받습니다</span>
+            </a>
+          </li>
+          <li class="way reveal">
+            <a class="way__link" href="#consult">
+              <span class="way__num" aria-hidden="true">03</span>
+              <span class="way__title">상담 신청</span>
+              <span class="way__text">내용을 남기시면 전화드립니다</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= 2. 상담 신청 ================= -->
+    <section class="section section--soft consult" id="consult" aria-labelledby="consult-title">
+      <div class="container split">
+        <header class="split__head reveal">
+          <p class="split__label" aria-hidden="true"><span>01</span> Consult</p>
+          <h2 class="h2" id="consult-title">상담 <span class="accent">신청</span></h2>
+          <div class="split__lead">
+            <p><span class="req-mark" aria-hidden="true">필수</span> 표시된 칸만 채우셔도 됩니다.</p>
+          </div>
+        </header>
+
+        <!-- 접수: 구글 앱스 스크립트로 구글 시트에 저장 + 이메일 알림.
+             설정 방법: docs/FORM-SETUP.md. 배포 주소를 data-endpoint 에 넣으면 동작한다.
+             주소가 비어 있으면 제출 시 "카카오톡이나 전화로 연락 주세요" 안내만 띄운다. -->
+        <form class="consult-form reveal" data-consult-form data-endpoint="" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-shop">가게 이름 <span class="req">필수</span></label>
+              <input id="f-shop" name="shop" type="text" required autocomplete="organization" maxlength="60">
+            </div>
+            <div class="field">
+              <label for="f-name">성함 <span class="req">필수</span></label>
+              <input id="f-name" name="name" type="text" required autocomplete="name" maxlength="30">
+            </div>
+          </div>
+          <div class="field field--half">
+            <label for="f-phone">휴대폰 번호 <span class="req">필수</span></label>
+            <input id="f-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" pattern="[0-9\-\s]{9,15}" maxlength="15">
+          </div>
+          <div class="field">
+            <label for="f-concern">어떤 점이 고민이신가요? <span class="req">필수</span></label>
+            <textarea id="f-concern" name="concern" rows="5" required maxlength="1000" placeholder="예: 손님이 줄었어요 / 홍보 영상 견적이 궁금해요"></textarea>
+          </div>
+          <div class="field field--half">
+            <label for="f-source">저희를 어떻게 알게 되셨나요? <span class="opt">선택</span></label>
+            <select id="f-source" name="source">
+              <option value="">선택해 주세요</option>
+              <option>네이버 검색</option>
+              <option>인스타그램</option>
+              <option>유튜브</option>
+              <option>지인 소개</option>
+              <option>강의</option>
+              <option>기타</option>
+            </select>
+          </div>
+
+          <details class="more">
+            <summary>더 알려주실 내용 <span class="opt">선택</span></summary>
+            <div class="more__body">
+              <fieldset class="field">
+                <legend>한 달 홍보 예산</legend>
+                <div class="choices"><label class="choice"><input type="radio" name="budget" value="50~100만원"><span>50~100만원</span></label><label class="choice"><input type="radio" name="budget" value="100~300만원"><span>100~300만원</span></label><label class="choice"><input type="radio" name="budget" value="300~500만원"><span>300~500만원</span></label><label class="choice"><input type="radio" name="budget" value="500~1,000만원"><span>500~1,000만원</span></label><label class="choice"><input type="radio" name="budget" value="직접 적기" data-custom-toggle="f-budget-custom"><span>직접 적기</span></label></div>
+                <label class="sr-only" for="f-budget-custom">한 달 홍보 예산 직접 적기</label>
+                <input id="f-budget-custom" name="budget_custom" type="text" placeholder="예: 월 30만원" maxlength="30" hidden>
+              </fieldset>
+              <div class="field">
+                <label for="f-call">통화하기 편한 날짜·시간</label>
+                <input id="f-call" name="call_time" type="text" placeholder="예: 평일 오후 3시 이후" maxlength="60">
+              </div>
+              <div class="field">
+                <label for="f-goal">광고로 바라는 결과가 있나요?</label>
+                <textarea id="f-goal" name="goal" rows="4" maxlength="1000" placeholder="예: 점심 손님이 늘었으면 해요"></textarea>
+              </div>
+            </div>
+          </details>
+
+          <!-- 스팸 방지용 칸. 사람에게는 보이지 않는다. -->
+          <div class="hp" aria-hidden="true"><label for="f-website">비워 두세요</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+          <div class="agree">
+            <label class="agree__check"><input type="checkbox" name="agree" value="동의" required> <span>개인정보 수집·이용에 동의합니다. <span class="req">필수</span></span></label>
+            <details class="agree__detail">
+              <summary>내용 보기</summary>
+              <dl class="agree__list">
+                <div><dt>모으는 정보</dt><dd>가게 이름, 성함, 휴대폰 번호, 고민 내용, 선택해서 적으신 내용</dd></div>
+                <div><dt>쓰는 곳</dt><dd>상담 안내 전화</dd></div>
+                <div><dt>보관 기간</dt><dd>상담이 끝나고 1년 동안 보관한 뒤 지웁니다</dd></div>
+                <div><dt>동의하지 않으면</dt><dd>상담 신청을 받을 수 없습니다. 카카오톡이나 전화로는 문의하실 수 있습니다.</dd></div>
+              </dl>
+            </details>
+          </div>
+
+          <div class="consult-form__submit">
+            <button class="btn btn--primary" type="submit">상담 신청하기</button>
+            <p class="btn-note">신청해 주시면 전화로 먼저 안내드립니다</p>
+          </div>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= 3. 문의하신 뒤에는 ================= -->
+    <section class="section after" aria-labelledby="after-title">
+      <div class="container">
+        <div class="after__head reveal">
+          <p class="eyebrow" aria-hidden="true">Next</p>
+          <h2 class="h2" id="after-title">문의하신 <span class="accent">뒤에는</span></h2>
+        </div>
+        <ol class="after__steps">
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">01</span>
+            <h3 class="step__title">전화를 드립니다</h3>
+            <p class="step__text">가게 상황을 먼저 듣습니다.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">02</span>
+            <h3 class="step__title">만날 날을 정합니다</h3>
+            <p class="step__text">제주시 사무실에서 만납니다.<br>필요하면 가게로 갑니다.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">03</span>
+            <h3 class="step__title">필요한 것을 정하고 시작합니다</h3>
+            <p class="step__text">한 달 단위로 계약합니다.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= 4. 오시는 길 ================= -->
+    <section class="section section--peach office" id="office" aria-labelledby="office-title">
+      <div class="container office__inner">
+        <div class="office__info reveal">
+          <p class="split__label" aria-hidden="true"><span>02</span> Office</p>
+          <h2 class="h2" id="office-title">오시는 길</h2>
+          <address class="office__address">제주특별자치도 제주시<br>연북로 161, 2층 215호</address>
+          <div class="office__text">
+            <p>상담은 예약하고 오시면 됩니다.</p>
+            <p>제주 어디든 찾아갑니다. 출장비는 없습니다.</p>
+          </div>
+          <dl class="def-list office__list">
+            <div><dt>주차</dt><dd>전용 주차 공간이 있습니다</dd></div>
+            <div><dt>전화</dt><dd><a href="tel:010-7538-5083">010-7538-5083</a></dd></div>
+            <div><dt>영업시간</dt><dd>월~목 09:30~18:30 · 금 09:00~18:00 · 토·일 휴무</dd></div>
+          </dl>
+          <div class="office__maps">
+            <a class="link-arrow" href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EC%97%B0%EB%B6%81%EB%A1%9C%20161" target="_blank" rel="noopener">네이버 지도<span class="sr-only"> (새 창)</span></a>
+            <a class="link-arrow" href="https://map.kakao.com/?q=%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EC%97%B0%EB%B6%81%EB%A1%9C%20161" target="_blank" rel="noopener">카카오맵<span class="sr-only"> (새 창)</span></a>
+          </div>
+        </div>
+        <div class="office__visual reveal">
+          <div class="office__map">
+            <iframe title="제주마케팅파트너스 사무실 위치 지도" src="https://www.google.com/maps?q=%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EC%97%B0%EB%B6%81%EB%A1%9C%20161&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="img-slot ratio-4x3" role="img" aria-label="사무실 건물 입구">
+            <p class="img-slot__text"><strong>CONTACT-BUILDING · 4:3 · 1200×900</strong>연북로 161 건물 입구 또는 주차장 (처음 오시는 분이 찾기 쉽게)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. 자주 묻는 질문 ================= -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container split">
+        <header class="split__head reveal">
+          <p class="split__label" aria-hidden="true"><span>03</span> FAQ</p>
+          <h2 class="h2" id="faq-title">자주 묻는 <span class="accent">질문</span></h2>
+          <div class="split__lead">
+            <p>궁금하신 내용을 주제별로 모았습니다.</p>
+          </div>
+          <nav aria-label="질문 주제">
+            <ul class="jump-links faq__nav">
+              <li><a href="#faq-effect"><span>01</span><span>효과·기간</span></a></li>
+              <li><a href="#faq-cost"><span>02</span><span>비용·계약</span></a></li>
+              <li><a href="#faq-service"><span>03</span><span>서비스</span></a></li>
+              <li><a href="#faq-area"><span>04</span><span>지역·진행</span></a></li>
+              <li><a href="#faq-worry"><span>05</span><span>걱정되는 점</span></a></li>
+            </ul>
+          </nav>
+        </header>
+        <div class="faq__body">
+          <section class="faq__group reveal" id="faq-effect" aria-labelledby="faq-effect-title">
+            <h3 class="faq__cat" id="faq-effect-title">효과·기간</h3>
+            <details class="faq__item">
+              <summary><span class="faq__q">광고를 하면 매출이 오를까요?</span></summary>
+              <div class="faq__a"><p>오른 가게도 있고, 아닌 가게도 있습니다.</p><p>제주시 도두동 전복 전문점은 일매출 약 100만원에서 약 300만원이 됐습니다.</p><p>제주시 아라동 재활PT·요가는 오픈 첫 달 매출 1,000만원에서 둘째 달 1,500만원이 됐습니다.</p><p>손님이 안 오는 게 광고 때문이 아닐 때도 많아서, 메뉴·가격·간판을 먼저 살펴봅니다.</p><p>매출 상승을 약속하지는 않습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">광고는 얼마나 오래 해야 하나요?</span></summary>
+              <div class="faq__a"><p>한 달 단위로 계약합니다.</p><p>한 달 해보고 정하셔도 됩니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">다른 가게는 매출이 얼마나 올랐나요?</span></summary>
+              <div class="faq__a"><p>소플러스 제주노형공항점은 4개월 총매출이 33.6% 늘었습니다.</p><p>성산 갈치조림 전문점은 월매출 3,000만원에서 1억 3,000만원이 됐습니다.</p><p>가게마다 결과는 다릅니다.</p><p>12곳 사례는 <a href="/cases">성공사례</a>에서 보실 수 있습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">어떤 광고가 효과가 좋나요?</span></summary>
+              <div class="faq__a"><p>가게마다 다릅니다.</p><p>네이버 플레이스·파워링크는 가게를 찾는 손님에게 보입니다.</p><p>인스타·유튜브는 제주 여행을 준비하는 사람에게 보입니다.</p><p>상담 때 가게에 맞는 광고를 정합니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">인스타·유튜브 광고 효과가 있나요?</span></summary>
+              <div class="faq__a"><p>관광객은 제주에 오기 전에 갈 가게를 정합니다.</p><p>인스타·유튜브 광고로 이분들에게 가게 영상을 보여줍니다.</p><p>효과는 매달 숫자로 보여드립니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">영상 촬영은 얼마나 걸리나요?</span></summary>
+              <div class="faq__a"><p>촬영은 한 번에 2시간 30분입니다.</p><p>영업에 지장 없는 시간에 갑니다.</p><p>계약 후 7일 안에 영상을 드리고, 두 번까지 무료로 고쳐 드립니다.</p></div>
+            </details>
+          </section>
+          <section class="faq__group reveal" id="faq-cost" aria-labelledby="faq-cost-title">
+            <h3 class="faq__cat" id="faq-cost-title">비용·계약</h3>
+            <details class="faq__item">
+              <summary><span class="faq__q">광고비는 한 달에 어느 정도 써야 하나요?</span></summary>
+              <div class="faq__a"><p>가게 상황에 맞춰 함께 정합니다.</p><p>광고비는 네이버·인스타 등에 직접 내시는 돈이라 저희 비용에 들어 있지 않습니다.</p><p>제주는 클릭당 광고 단가가 높은 편입니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">광고 관리 비용은 얼마인가요?</span></summary>
+              <div class="faq__a"><p>광고 관리는 채널당 월 5만원, 광고 계정 만들기는 채널당 10만원입니다.</p><p>부가세와 광고비는 따로입니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">예산에 맞춰 주실 수 있나요?</span></summary>
+              <div class="faq__a"><p>필요한 것만 골라서 맡기실 수 있습니다.</p><p>영상 한 편부터 시작하셔도 됩니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">촬영비는 얼마인가요?</span></summary>
+              <div class="faq__a"><p>초기 기획 및 촬영은 100만원, 촬영만 하면 1회 50만원입니다.</p><p>20초 홍보 영상 제작은 50만원입니다.</p><p>부가세는 따로입니다. 자세한 가격은 <a href="/pricing">가격</a>에서 보실 수 있습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">계약 기간이 정해져 있나요?</span></summary>
+              <div class="faq__a"><p>한 달 단위로 계약합니다.</p><p>6개월, 1년으로 묶지 않습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">중간에 그만두면 환불되나요?</span></summary>
+              <div class="faq__a"><p>작업을 시작하기 전, 계약 후 7일 안에 취소하시면 전액 돌려드립니다.</p><p>영상을 받으신 뒤 그만두시면 진행한 만큼 빼고 돌려드립니다.</p><p>위약금은 없습니다. 일주일 전에 알려주세요.</p></div>
+            </details>
+          </section>
+          <section class="faq__group reveal" id="faq-service" aria-labelledby="faq-service-title">
+            <h3 class="faq__cat" id="faq-service-title">서비스</h3>
+            <details class="faq__item">
+              <summary><span class="faq__q">매출 관리도 같이 해주시나요?</span></summary>
+              <div class="faq__a"><p>네. 매달 결과를 설명하고 보고서를 드립니다.</p><p>매출 밀착 관리는 가게마다 할 일이 달라 상담 때 가격을 안내합니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">컨설팅도 하시나요?</span></summary>
+              <div class="faq__a"><p>네. 메뉴·가격·간판을 살펴 장사가 안 되는 이유를 찾아드립니다.</p><p>필요하면 간판·인테리어 업체를 연결해 드립니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">플레이스 상위 노출 작업도 하시나요?</span></summary>
+              <div class="faq__a"><p>네이버 플레이스 광고와 파워링크를 관리합니다.</p><p>순위는 네이버가 정합니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">플레이스 상위 노출이 보장되나요?</span></summary>
+              <div class="faq__a"><p>보장하지 않습니다.</p><p>순위는 네이버가 정하고, 주변 가게 상황에 따라 바뀝니다.</p><p>보장한다는 곳은 조심하시는 게 좋습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">챗GPT에 우리 가게가 나오게 할 수 있나요?</span></summary>
+              <div class="faq__a"><p>네, 하고 있습니다.</p><p>챗GPT·제미나이 같은 AI에 물었을 때 가게가 나오도록 돕습니다.</p><p>방법과 비용은 상담 때 안내드립니다. AI 답변에 나오는 것을 보장하지는 않습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">카드뉴스도 만들어 주시나요?</span></summary>
+              <div class="faq__a"><p>네, 만들어 드립니다.</p><p>가격은 상담 때 안내드립니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">블로그 글이나 체험단도 해주시나요?</span></summary>
+              <div class="faq__a"><p>하지 않습니다.</p><p>블로그 글 대행, 블로그 광고, 체험단 섭외는 하지 않습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">홈페이지 제작도 하시나요?</span></summary>
+              <div class="faq__a"><p>하지 않습니다.</p><p>홍보 영상과 광고, 컨설팅에 집중합니다.</p></div>
+            </details>
+          </section>
+          <section class="faq__group reveal" id="faq-area" aria-labelledby="faq-area-title">
+            <h3 class="faq__cat" id="faq-area-title">지역·진행</h3>
+            <details class="faq__item">
+              <summary><span class="faq__q">출장비가 있나요?</span></summary>
+              <div class="faq__a"><p>제주 안에서는 출장비가 없습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">제주 밖에서도 촬영하시나요?</span></summary>
+              <div class="faq__a"><p>제주 밖 촬영은 하지 않습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">문의하면 어떻게 진행되나요?</span></summary>
+              <div class="faq__a"><p>문의 → 전화 통화 → 만나서 계약 → 사전 미팅·기획 → 촬영 → 매달 관리 순서입니다.</p><p>영상은 계약 후 7일 안에 드립니다.</p></div>
+            </details>
+          </section>
+          <section class="faq__group reveal" id="faq-worry" aria-labelledby="faq-worry-title">
+            <h3 class="faq__cat" id="faq-worry-title">걱정되는 점</h3>
+            <details class="faq__item">
+              <summary><span class="faq__q">찍을 게 별로 없는데 영상이 나올까요?</span></summary>
+              <div class="faq__a"><p>사전 미팅에서 가게를 보고 무엇을 찍을지 함께 정합니다.</p><p>메뉴, 만드는 과정, 사장님 이야기도 좋은 소재가 됩니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">음식점이 아니어도 되나요?</span></summary>
+              <div class="faq__a"><p>됩니다.</p><p>필라테스·PT, 옷가게·소품샵, 에스테틱·뷰티처럼 매장이 있으면 어디든 됩니다.</p><p>병원·법률 같은 전문직은 하지 않습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">사장님이 꼭 영상에 나와야 하나요?</span></summary>
+              <div class="faq__a"><p>나오시는 편이 좋습니다.</p><p>손님은 가게보다 사람을 기억하기 때문입니다.</p><p>말을 잘 못하셔도 괜찮습니다. 할 말은 촬영 전에 정리해 드립니다.</p><p>어려우시면 손이나 뒷모습만 담을 수도 있습니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">나쁜 후기가 달렸는데 그냥 둬도 될까요?</span></summary>
+              <div class="faq__a"><p>그냥 두지 않는 게 좋습니다.</p><p>답글을 달고, 좋은 후기가 쌓이도록 해서 아래로 밀어냅니다.</p></div>
+            </details>
+            <details class="faq__item">
+              <summary><span class="faq__q">보통 얼마나 오래 맡기시나요?</span></summary>
+              <div class="faq__a"><p>평균 1~5년 함께합니다.</p><p>다음 달에도 다시 맡기시는 가게가 90%입니다.</p></div>
+            </details>
+          </section>
+        </div>
+      </div>
+    </section>
+</BaseLayout>

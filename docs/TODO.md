@@ -1,13 +1,18 @@
 # 확인 필요 목록
 
-HTML 안에서는 `TODO` 주석과 `data-todo` 속성으로 표시해 두었다. 해결하면 이 목록에서 지운다.
+Astro 페이지·컴포넌트와 정적 JavaScript에서는 `TODO` 주석과 `data-todo` 속성으로 표시해 두었다. 해결하면 코드의 표시와 이 목록을 함께 지운다.
 
 ## 주소·연락처
 
-- [ ] 카카오톡 채널 주소 — `data-todo="kakao-url"` (메인 6곳, 서비스 5곳, 가격 5곳) (지금은 `https://pf.kakao.com/`)
+- [ ] 카카오톡 채널 주소 — `src/components/`와 `src/pages/`의 `data-todo="kakao-url"` (일부는 지금 `https://pf.kakao.com/` 또는 `#`)
 - [ ] 인스타그램·유튜브·네이버 블로그 주소 — `data-todo="sns-*"`
-- [ ] 실제 도메인 — `<link rel="canonical">` (지금은 jejumarketing.co.kr로 추정)
+- [ ] 실제 도메인 — `astro.config.mjs`의 `site`와 각 페이지가 `BaseLayout`에 넘기는 `canonical` 확인 (지금은 jejumarketing.co.kr로 추정)
 - [ ] 홍보 영상 주소 — 메인 `.video__play`의 `data-video-src`, 서비스 예시 영상 3개(소플러스·중문우동한그릇·안녕전복)
+
+## 이미지·공유 미리보기
+
+- [ ] `public/assets/img/common/`에 favicon·apple-touch-icon을 준비하고 `src/layouts/BaseLayout.astro`의 공통 `<head>`에 연결
+- [ ] `public/assets/img/common/og-image.jpg`를 준비하고 `BaseLayout.astro`의 기본 `ogImage` 경로를 변경
 
 ## 문구 (사용자 확정 필요)
 
@@ -23,13 +28,14 @@ HTML 안에서는 `TODO` 주석과 `data-todo` 속성으로 표시해 두었다.
 ## 사실 확인
 
 - [ ] 성공사례 '영상 보기' 주소 11곳 — `data-todo="video-url"`에 넣기 (8번은 반영 완료. 주소는 모두 있음)
-- [ ] 성공사례 사진 — 1~6번 외관·함께한 가게 사진 줄 사진 넣기 (사용 허락 받음, 사진 모두 있음)
+- [ ] 성공사례 사진 — `case-03.webp`, `gallery-06.webp`~`gallery-08.webp` 추가 필요. 나머지 제공 사진은 적용 완료
 - [ ] 성공사례 3번 다정이네김밥 지점 지역 — 모르면 태그 없이 유지
 - [x] 성공사례 9번 "인스타 광고"로 수정 (블로그 광고는 이제 하지 않음)
-- [ ] 문의 폼 접수 주소 — 앱스 스크립트 배포 후 `contact.html`의 `data-endpoint`에 넣기 (docs/FORM-SETUP.md)
+- [ ] 문의 폼 접수 주소 — 앱스 스크립트 배포 후 `src/pages/contact.astro`의 `data-endpoint`에 넣기 (docs/FORM-SETUP.md)
+- [ ] 문의 폼 연결 전 Google Apps Script·Sheets·Gmail의 개인정보 처리위탁 및 국외 이전 고지 항목(이전 국가·시기·방법·보유기간 포함)을 실제 계정 설정과 약관에 맞춰 확인하고 `src/pages/privacy.astro`에 반영
 - [x] 개인정보 보관 기간 — 상담이 끝나고 1년 (반영 완료)
 
 
 ## 다음 페이지
 
-- [x] 가격 페이지의 영상 길이 '25~30초' → 20초로 통일 (pricing.html 완료)
+- [x] 가격 페이지의 영상 길이 '25~30초' → 20초로 통일 (`src/pages/pricing.astro` 완료)

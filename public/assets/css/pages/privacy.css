@@ -1,0 +1,21 @@
+/* 개인정보처리방침 */
+.privacy-intro__inner { display: grid; gap: var(--sp-3); }
+.privacy-intro__lead p + p { margin-top: var(--sp-1); }
+
+.privacy__inner { display: grid; gap: var(--sp-5); }
+.privacy__head { max-width: 38rem; }
+.privacy__body { max-width: 52rem; color: var(--c-text); }
+.privacy__body > p + p { margin-top: var(--sp-2); }
+.privacy__list { margin-top: var(--sp-4); }
+.privacy__body .notice-box { margin-top: var(--sp-4); }
+.privacy__subsection + .privacy__subsection { margin-top: var(--sp-5); padding-top: var(--sp-5); border-top: 1px solid var(--c-line); }
+.privacy__subsection > p { margin-top: var(--sp-2); }
+.privacy__date { margin-top: var(--sp-3); color: var(--c-muted); }
+.privacy__date strong { margin-right: var(--sp-2); color: var(--c-ink); }
+
+@media (min-width: 960px) {
+  .privacy-intro__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: end; column-gap: var(--sp-6); }
+  .privacy-intro__lead { padding-bottom: var(--sp-1); padding-left: var(--sp-4); border-left: 1px solid var(--c-line); }
+  .privacy__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--sp-6); }
+  .privacy__head { position: sticky; top: calc(var(--header-h) + var(--sp-3)); align-self: start; }
+}

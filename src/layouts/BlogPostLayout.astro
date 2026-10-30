@@ -1,0 +1,144 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface RelatedPost {
+  id: string;
+  title: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  publishDate: Date;
+  updatedDate?: Date;
+  heroImage: string;
+  heroAlt: string;
+  previousPost?: RelatedPost;
+  nextPost?: RelatedPost;
+}
+
+const {
+  title,
+  description,
+  category,
+  publishDate,
+  updatedDate = publishDate,
+  heroImage,
+  heroAlt,
+  previousPost,
+  nextPost,
+} = Astro.props;
+
+const formatDate = (date: Date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}.${month}.${day}`;
+};
+
+const dateTime = (date: Date) => date.toISOString().slice(0, 10);
+const site = Astro.site ?? new URL('https://jejumarketing.co.kr');
+const canonical = new URL(Astro.url.pathname, site).href;
+const absoluteHero = new URL(heroImage, site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  image: absoluteHero,
+  datePublished: dateTime(publishDate),
+  dateModified: dateTime(updatedDate),
+  author: {
+    '@type': 'Person',
+    name: '한승지',
+    jobTitle: '제주마케팅파트너스 대표',
+    url: new URL('/about', site).href,
+  },
+  publisher: { '@type': 'Organization', name: '제주마케팅파트너스' },
+  mainEntityOfPage: canonical,
+};
+
+const page = {
+  title: `${title} | 제주마케팅파트너스 블로그`,
+  description,
+  canonical,
+  ogTitle: `${title} | 제주마케팅파트너스 블로그`,
+  ogDescription: description,
+  ogType: 'article',
+  ogImage: absoluteHero,
+  bodyClass: 'page-post',
+  pageStylesheet: '/assets/css/pages/blog.css',
+  activePage: 'blog',
+  showContactCta: true,
+} as const;
+---
+
+<BaseLayout {...page}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <article class="post" aria-labelledby="post-title">
+    <!-- ================= 글 머리 ================= -->
+    <header class="post__header">
+      <div class="container post__narrow">
+        <nav class="post__crumb" aria-label="현재 위치">
+          <ol>
+            <li><a href="/blog">블로그</a></li>
+            <li aria-current="page">{category}</li>
+          </ol>
+        </nav>
+        <p class="post__cat">{category}</p>
+        <h1 class="post__title" id="post-title">{title}</h1>
+        <p class="post__excerpt">{description}</p>
+        <p class="post__meta">
+          <time datetime={dateTime(publishDate)}>{formatDate(publishDate)}</time>
+          <span>대표 한승지</span>
+        </p>
+      </div>
+      <div class="container post__wide">
+        <img class="img-cover ratio-16x9" src={heroImage} alt={heroAlt} width="1600" height="900" fetchpriority="high">
+      </div>
+    </header>
+
+    <!-- ================= 글 본문 ================= -->
+    <div class="container post__narrow">
+      <div class="prose">
+        <slot />
+      </div>
+
+      <!-- ================= 글쓴이 ================= -->
+      <footer class="post__author">
+        <div class="img-slot ratio-1x1 post__author-img" role="img" aria-label="대표 한승지">
+          <p class="img-slot__text"><strong>CEO</strong></p>
+        </div>
+        <div>
+          <p class="post__author-name">한승지 <span>제주마케팅파트너스 대표</span></p>
+          <p class="post__author-text">매달 사장님들께 마케팅 강의를 합니다.</p>
+          <a class="link-arrow" href="/about">대표 소개 보기</a>
+        </div>
+      </footer>
+
+      <div class="case-band post__band">
+        <p class="case-band__text">우리 가게도 상담받기</p>
+        <a class="link-arrow" href="/contact#consult">상담 신청하기</a>
+      </div>
+
+      <!-- ================= 이전·다음 글 ================= -->
+      <nav class="post__nav" aria-label="다른 글">
+        {previousPost ? (
+          <a class="post__nav-prev" href={`/blog/${previousPost.id}`}><span>이전 글</span>{previousPost.title}</a>
+        ) : (
+          <span class="post__nav-prev" aria-hidden="true"></span>
+        )}
+        <a class="post__nav-list" href="/blog#posts">목록으로</a>
+        {nextPost ? (
+          <a class="post__nav-next" href={`/blog/${nextPost.id}`}><span>다음 글</span>{nextPost.title}</a>
+        ) : (
+          <span class="post__nav-next" aria-hidden="true"></span>
+        )}
+      </nav>
+    </div>
+  </article>
+</BaseLayout>

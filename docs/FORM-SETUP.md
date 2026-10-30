@@ -1,6 +1,6 @@
 # 상담 신청 폼 연결 (구글 시트 + 이메일)
 
-`contact.html`의 상담 신청 폼은 구글 앱스 스크립트로 받는다.
+`src/pages/contact.astro`의 상담 신청 폼은 구글 앱스 스크립트로 받는다.
 신청이 들어오면 **구글 시트에 한 줄 저장**되고, **이메일로 알림**이 온다. 서버나 유료 서비스는 필요 없다.
 
 ## 1. 구글 시트 만들기
@@ -49,9 +49,9 @@ function doPost(e) {
 4. 나오는 **웹 앱 URL**(`https://script.google.com/macros/s/…/exec`)을 복사한다.
 
 ## 4. 사이트에 연결
-`contact.html`에서 아래 부분의 `data-endpoint=""` 안에 URL을 넣는다.
+`src/pages/contact.astro`에서 아래 부분의 `data-endpoint=""` 안에 URL을 넣는다.
 
-```html
+```astro
 <form class="consult-form reveal" data-consult-form data-endpoint="여기에 URL" novalidate>
 ```
 
@@ -61,5 +61,6 @@ function doPost(e) {
 
 ## 참고
 - 주소가 비어 있으면 폼은 "카카오톡이나 전화로 연락 주세요" 안내만 띄운다.
+- 엔드포인트는 `src/pages/contact.astro`의 폼에만 넣는다. `public/assets/js/main.js`나 공개 문서에 별도 상수로 중복하지 않는다.
 - 브라우저는 구글의 응답 내용을 읽지 못한다(no-cors). 네트워크가 끊긴 경우만 실패 안내가 나온다.
-- 동의 문구의 보관 기간은 **상담이 끝나고 1년**이다. 1년이 지난 줄은 시트에서 지운다.
+- 동의 문구의 보관 기간은 **상담이 끝나고 1년**이다. 1년이 지나면 시트의 해당 줄과 개인정보가 들어 있는 알림 이메일을 함께 지운다.

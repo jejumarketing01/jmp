@@ -1,0 +1,31 @@
+---
+interface Props {
+  activePage?: 'services' | 'pricing' | 'cases' | 'about' | 'blog' | 'contact';
+}
+
+const { activePage } = Astro.props;
+---
+
+<dialog class="menu-panel" id="menu-panel" aria-label="메뉴와 연락처">
+  <button class="menu-panel__close" type="button" data-menu-close><span aria-hidden="true">×</span><span class="sr-only">메뉴 닫기</span></button>
+  <div class="menu-panel__inner">
+    <nav class="menu-panel__nav" aria-label="모바일 메뉴">
+      <ul class="plain">
+        <li><a href="/services" aria-current={activePage === 'services' ? 'page' : undefined}>서비스</a></li>
+        <li><a href="/pricing" aria-current={activePage === 'pricing' ? 'page' : undefined}>가격</a></li>
+        <li><a href="/cases" aria-current={activePage === 'cases' ? 'page' : undefined}>성공사례</a></li>
+        <li><a href="/about" aria-current={activePage === 'about' ? 'page' : undefined}>소개</a></li>
+        <li><a href="/blog" aria-current={activePage === 'blog' ? 'page' : undefined}>블로그</a></li>
+        <li><a href="/contact" aria-current={activePage === 'contact' ? 'page' : undefined}>문의</a></li>
+      </ul>
+    </nav>
+    <dl class="menu-panel__info">
+      <div><dt>전화</dt><dd><a href="tel:010-7538-5083">010-7538-5083</a></dd></div>
+      <div><dt>이메일</dt><dd><a href="mailto:help@jejumarketing.co.kr">help@jejumarketing.co.kr</a></dd></div>
+      <div><dt>영업시간</dt><dd>월~목 09:30~18:30<br>금 09:00~18:00 · 토·일 휴무</dd></div>
+      <div><dt>주소</dt><dd>제주시 연북로 161, 2층 215호</dd></div>
+    </dl>
+    <!-- TODO: 카카오톡 채널 주소로 교체 -->
+    <a class="btn btn--primary" href="https://pf.kakao.com/" data-todo="kakao-url">카카오톡으로 문의하기</a>
+  </div>
+</dialog>

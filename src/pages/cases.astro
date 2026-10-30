@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const page = {
+  "title": "성공사례 | 제주마케팅파트너스 · 제주 음식점·가게 홍보 결과",
+  "description": "제주마케팅파트너스와 함께한 제주 가게 성공사례. 소플러스 제주노형공항점 4개월 총매출 +33.6%, 중문우동한그릇 비수기 웨이팅 120명, 안녕전복 일매출 약 100만원→약 300만원 등 12곳의 실제 숫자.",
+  "canonical": "https://jejumarketing.co.kr/cases",
+  "ogTitle": "성공사례 | 제주마케팅파트너스",
+  "ogDescription": "저희와 함께한 제주 가게입니다. 달라진 숫자를 그대로 적었습니다.",
+  "bodyClass": "page-cases",
+  "pageStylesheet": "/assets/css/pages/cases.css",
+  "activePage": "cases",
+  "showContactCta": true
+} as const;
+---
+
+<BaseLayout {...page}>
+
+    <!-- ================= 1. 인트로 ================= -->
+    <section class="page-intro cases-intro" aria-labelledby="page-title">
+      <div class="container page-intro__inner">
+        <div class="page-intro__copy">
+          <p class="eyebrow" aria-hidden="true">Cases</p>
+          <h1 class="display" id="page-title">성공<span class="accent">사례</span></h1>
+          <div class="lead page-intro__lead">
+            <p>저희와 함께한 제주 가게입니다.</p>
+            <p>달라진 숫자를 그대로 적었습니다.</p>
+            <p>가게마다 결과는 다릅니다.</p>
+          </div>
+        </div>
+        <dl class="cases-stats">
+          <div class="stat"><dt class="stat__label">함께한 제주 가게</dt><dd class="stat__num">60<em>여 곳</em></dd></div>
+          <div class="stat"><dt class="stat__label">다음 달도 다시 맡기는 가게</dt><dd class="stat__num">90<em>%</em></dd></div>
+          <div class="stat"><dt class="stat__label">평균 함께한 기간</dt><dd class="stat__num">1~5<em>년</em></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= 2. 함께한 가게 사진 줄 (외관 사진, 사용 허락 받음) ================= -->
+    <section class="gallery" aria-labelledby="gallery-title">
+      <div class="container gallery__head">
+        <h2 class="gallery__title" id="gallery-title">함께한 제주 가게</h2>
+        <div class="rail-nav" data-rail-nav="gallery">
+          <button class="rail-nav__btn" type="button" data-rail-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="sr-only">이전 사진</span></button>
+          <button class="rail-nav__btn" type="button" data-rail-next><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg><span class="sr-only">다음 사진</span></button>
+        </div>
+      </div>
+      <ul class="rail gallery__rail" data-rail="gallery">
+            <li>
+              <figure class="gallery__item">
+                <img class="img-cover ratio-3x4" src="/assets/img/cases/gallery-01.webp" alt="함께한 제주 가게 외관" width="900" height="1200" loading="lazy">
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <img class="img-cover ratio-3x4" src="/assets/img/cases/gallery-02.webp" alt="함께한 제주 가게 외관" width="900" height="1200" loading="lazy">
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <img class="img-cover ratio-3x4" src="/assets/img/cases/gallery-03.webp" alt="함께한 제주 가게 외관" width="900" height="1200" loading="lazy">
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <img class="img-cover ratio-3x4" src="/assets/img/cases/gallery-04.webp" alt="함께한 제주 가게 외관" width="900" height="1200" loading="lazy">
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <img class="img-cover ratio-3x4" src="/assets/img/cases/gallery-05.webp" alt="함께한 제주 가게 외관" width="900" height="1200" loading="lazy">
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <div class="img-slot ratio-3x4" role="img" aria-label="함께한 제주 가게 외관">
+                  <p class="img-slot__text"><strong>GALLERY-06 · 3:4 · 900×1200</strong>함께한 가게 외관 (예: 드라이브 남대문즉석떡볶이_외관.jpg)</p>
+                </div>
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <div class="img-slot ratio-3x4" role="img" aria-label="함께한 제주 가게 외관">
+                  <p class="img-slot__text"><strong>GALLERY-07 · 3:4 · 900×1200</strong>함께한 가게 외관 (예: 드라이브 피플제주_외관.jpg)</p>
+                </div>
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <div class="img-slot ratio-3x4" role="img" aria-label="함께한 제주 가게 외관">
+                  <p class="img-slot__text"><strong>GALLERY-08 · 3:4 · 900×1200</strong>함께한 가게 외관 (예: 드라이브 안녕전복_외관측면.jpeg)</p>
+                </div>
+              </figure>
+            </li>
+      </ul>
+    </section>
+
+    <!-- ================= 3. 사례 목록 ================= -->
+    <section class="section section--soft cases-list" id="list" aria-labelledby="list-title">
+      <div class="container">
+        <div class="cases-list__head">
+          <h2 class="sr-only" id="list-title">사례 목록</h2>
+          <div class="filter" role="group" aria-label="업종으로 보기" data-filter-group="cases">
+            <button type="button" data-filter="all" aria-pressed="true">전체</button>
+            <button type="button" data-filter="food" aria-pressed="false">음식점</button>
+            <button type="button" data-filter="other" aria-pressed="false">그 외 업종</button>
+          </div>
+          <p class="filter__status" aria-live="polite"><span data-filter-status="cases">12곳</span></p>
+        </div>
+
+        <ul class="case-grid case-grid--big" data-filter-section="cases">
+          <li class="case case--big reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-01">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-01.webp" alt="소플러스 제주노형공항점 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>소고기 전문점</li><li>제주시 노형동</li></ul><p class="case__period">2026년 4~7월</p></div>
+                <p class="case__num" aria-hidden="true">01</p>
+                <h3 class="case__name" id="case-01">소플러스 제주노형공항점</h3>
+                <p class="case__result">4개월 총매출 7억 586만원 → 9억 4,289만원 <em>(+33.6%)</em></p>
+                <div class="case__desc"><p>영수증 5,008건 → 8,500건.</p><p>현수막으로 상호가 보이게 하고, 점심특선을 홍보했습니다.</p><p>인스타·유튜브 광고도 함께 했습니다.</p></div>
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case case--big reveal" data-filter-item="cases" data-cat="other">
+            <article class="case__card" aria-labelledby="case-02">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-02.webp" alt="고윤호 재활PT&amp;요가 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>재활PT·요가</li><li>제주시 아라동</li></ul><p class="case__period">2026년 1월 오픈</p></div>
+                <p class="case__num" aria-hidden="true">02</p>
+                <h3 class="case__name" id="case-02">고윤호 재활PT&amp;요가</h3>
+                <p class="case__result">오픈 첫 달 매출 1,000만원 → 둘째 달 1,500만원</p>
+                <div class="case__desc"><p>신규 상담 15건, 전원 등록했습니다.</p><p>오픈 초기 가게를 알렸습니다.</p></div>
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case case--big reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-03">
+              <div class="case__media">
+                <div class="img-slot ratio-4x3" role="img" aria-label="다정이네김밥 외관">
+                  <p class="img-slot__text"><strong>CASE-03 · 4:3 · 1200×900</strong>다정이네김밥 지점 외관</p>
+                </div>
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>김밥 전문점</li></ul><p class="case__period">장기 관리</p></div>
+                <p class="case__num" aria-hidden="true">03</p>
+                <h3 class="case__name" id="case-03">다정이네김밥</h3>
+                <p class="case__result">지점당 일매출 300~500만원</p>
+                <div class="case__desc"><p>여러 지점을 오래 관리하고 있습니다.</p><p>지점마다 홍보 영상을 따로 만들었습니다.</p></div>
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case case--big reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-04">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-04.webp" alt="중문우동한그릇 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>우동 전문점</li><li>서귀포 중문</li></ul><p class="case__period">2025년 2월~</p></div>
+                <p class="case__num" aria-hidden="true">04</p>
+                <h3 class="case__name" id="case-04">중문우동한그릇</h3>
+                <p class="case__result">2026년 2월 비수기 웨이팅 120명</p>
+                <div class="case__desc"><p>제주 녹차면 메뉴를 제안했습니다.</p><p>비수기에도 성수기만큼 손님이 왔습니다.</p></div>
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case case--big reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-05">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-05.webp" alt="안녕전복 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>전복 전문점</li><li>제주시 도두동</li></ul></div>
+                <p class="case__num" aria-hidden="true">05</p>
+                <h3 class="case__name" id="case-05">안녕전복</h3>
+                <p class="case__result">일매출 약 100만원 → 약 300만원</p>
+                <div class="case__desc"><p>단품만 팔던 가게에 2·3인 세트메뉴를 제안했습니다.</p><p>광고보다 메뉴가 먼저였습니다.</p></div>
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case case--big reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-06">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-06.webp" alt="고은물식당 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>한정식</li><li>산방산 인근</li></ul><p class="case__period">2024년 12월~</p></div>
+                <p class="case__num" aria-hidden="true">06</p>
+                <h3 class="case__name" id="case-06">고은물식당</h3>
+                <p class="case__result">매출 2배</p>
+                <div class="case__desc"><p>매일 아침 반찬을 새로 만드는 1만원 정식을 가게 강점으로 홍보했습니다.</p></div>
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+          <div class="case-band reveal">
+            <p class="case-band__text">우리 가게도 상담받기</p>
+            <a class="link-arrow case-band__link" href="/contact#consult">상담 신청하기</a>
+          </div>
+
+        <div class="case-group" data-filter-section="cases">
+          <p class="case-group__note">7~12번은 가게 요청으로 상호를 밝히지 않습니다.</p>
+          <ul class="case-grid case-grid--small">
+          <li class="case reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-07">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-07.webp" alt="상호를 흐리게 처리한 성산 갈치조림 전문점 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>갈치조림 전문점</li><li>성산</li></ul></div>
+                <p class="case__num" aria-hidden="true">07</p>
+                <h3 class="case__name" id="case-07">성산 갈치조림 전문점</h3>
+                <p class="case__result">월매출 3,000만원 → 1억 3,000만원</p>
+                
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-08">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-08.webp" alt="상호를 흐리게 처리한 월정리 파스타 전문점 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>파스타 전문점</li><li>월정리</li></ul></div>
+                <p class="case__num" aria-hidden="true">08</p>
+                <h3 class="case__name" id="case-08">월정리 파스타 전문점</h3>
+                <p class="case__result">월매출 1,000만원 미만 → 7,900만원</p>
+                <div class="case__desc"><p>테이블 6개 가게입니다.</p></div>
+              <a class="link-arrow case__link" href="https://www.instagram.com/p/C1L_hxIPJla/" target="_blank" rel="noopener">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-09">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-09.webp" alt="상호를 흐리게 처리한 성산 짬뽕 전문점 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>짬뽕 전문점</li><li>성산</li></ul></div>
+                <p class="case__num" aria-hidden="true">09</p>
+                <h3 class="case__name" id="case-09">성산 짬뽕 전문점</h3>
+                <p class="case__result">웨이팅 발생</p>
+                <div class="case__desc"><p>인스타 광고를 함께 진행했습니다.</p></div>
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-10">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-10.webp" alt="상호를 흐리게 처리한 표선 한식 전문점 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>한식 전문점</li><li>표선</li></ul></div>
+                <p class="case__num" aria-hidden="true">10</p>
+                <h3 class="case__name" id="case-10">표선 한식 전문점</h3>
+                <p class="case__result">매출 상승</p>
+                
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-11">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-11.webp" alt="상호를 흐리게 처리한 해물탕 전문점 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>해물탕 전문점</li></ul></div>
+                <p class="case__num" aria-hidden="true">11</p>
+                <h3 class="case__name" id="case-11">해물탕 전문점</h3>
+                <p class="case__result">월매출 2,400만원 → 6,000만원</p>
+                
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          <li class="case reveal" data-filter-item="cases" data-cat="food">
+            <article class="case__card" aria-labelledby="case-12">
+              <div class="case__media">
+                <img class="img-cover ratio-4x3" src="/assets/img/cases/case-12.webp" alt="상호를 흐리게 처리한 성산 갈치조림 전문점 외관" width="1200" height="900" loading="lazy">
+              </div>
+              <div class="case__body">
+                <div class="case__meta"><ul class="case__tags"><li>갈치조림 전문점</li><li>성산</li></ul></div>
+                <p class="case__num" aria-hidden="true">12</p>
+                <h3 class="case__name" id="case-12">성산 갈치조림 전문점</h3>
+                <p class="case__result">월매출 600만원 → 2,400만원</p>
+                
+              <a class="link-arrow case__link" href="#" target="_blank" rel="noopener" data-todo="video-url">영상 보기<span class="sr-only"> (새 창)</span></a>
+              </div>
+            </article>
+          </li>
+          </ul>
+          <div class="case-band reveal">
+            <p class="case-band__text">우리 가게도 상담받기</p>
+            <a class="link-arrow case-band__link" href="/contact#consult">상담 신청하기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 하단 문의 (모든 페이지 공통) ================= -->
+</BaseLayout>

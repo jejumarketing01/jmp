@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const formatDate = (date: Date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}.${month}.${day}`;
+};
+
+const dateTime = (date: Date) => date.toISOString().slice(0, 10);
+
+const page = {
+  "title": "블로그 | 제주마케팅파트너스 · 사장님을 위한 가게 홍보 글",
+  "description": "제주마케팅파트너스 대표가 직접 쓰는 가게 홍보 글. 네이버 플레이스, 인스타 광고, 광고비, 홍보 영상 비용 등 제주 가게 사장님들이 자주 묻는 내용을 다룹니다.",
+  "canonical": "https://jejumarketing.co.kr/blog",
+  "ogTitle": "블로그 | 제주마케팅파트너스 · 사장님을 위한 가게 홍보 글",
+  "ogDescription": "제주마케팅파트너스 대표가 직접 쓰는 가게 홍보 글. 네이버 플레이스, 인스타 광고, 광고비, 홍보 영상 비용 등 제주 가게 사장님들이 자주 묻는 내용을 다룹니다.",
+  "bodyClass": "page-blog",
+  "pageStylesheet": "/assets/css/pages/blog.css",
+  "activePage": "blog",
+  "showContactCta": true
+} as const;
+---
+
+<BaseLayout {...page}>
+
+    <!-- ================= 1. 인트로 ================= -->
+    <section class="page-intro blog-intro" aria-labelledby="page-title">
+      <div class="container blog-intro__inner">
+        <div>
+          <p class="eyebrow" aria-hidden="true">Blog</p>
+          <h1 class="display" id="page-title">블로그</h1>
+        </div>
+        <div class="lead blog-intro__lead">
+          <p>가게 홍보에 필요한 내용을 대표가 직접 씁니다.</p>
+          <p>제주 가게에서 직접 확인한 것만 씁니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. 최신 글 =================
+         새 글을 올리면 .post-grid 안에 카드(li.post-card)를 최신 글이 맨 앞에 오도록 추가하고,
+         .post-empty 를 지운다. 카드 마크업은 아래 주석의 예시를 그대로 복사한다. -->
+    <section class="section section--soft posts" id="posts" aria-labelledby="posts-title">
+      <div class="container">
+        <div class="posts__head reveal">
+          <p class="split__label" aria-hidden="true"><span>01</span> Posts</p>
+          <h2 class="h2" id="posts-title">최신 글</h2>
+        </div>
+
+        {posts.length === 0 && (
+          <div class="post-empty reveal">
+            <p class="post-empty__title">첫 글을 준비하고 있습니다</p>
+            <p class="post-empty__text">글이 올라오면 이곳에 최신순으로 보입니다.</p>
+          </div>
+        )}
+
+        <ul class="post-grid">
+          {posts.map((post) => (
+            <li class="post-card reveal">
+              <article>
+                <a class="post-card__link" href={`/blog/${post.id}`}>
+                  <div class="post-card__img">
+                    <img class="img-cover ratio-16x9" src={post.data.heroImage} alt={post.data.heroAlt} width="1600" height="900" loading="lazy">
+                  </div>
+                  <div class="post-card__body">
+                    <p class="post-card__meta"><span class="post-card__cat">{post.data.category}</span> <time datetime={dateTime(post.data.publishDate)}>{formatDate(post.data.publishDate)}</time></p>
+                    <h3 class="post-card__title">{post.data.title}</h3>
+                    <p class="post-card__excerpt">{post.data.description}</p>
+                  </div>
+                </a>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 3. 앞으로 쓸 글 ================= -->
+    <section class="section topics" aria-labelledby="topics-title">
+      <div class="container">
+        <div class="topics__head reveal">
+          <div>
+            <p class="split__label" aria-hidden="true"><span>02</span> Coming up</p>
+            <h2 class="h2" id="topics-title">앞으로 쓸 글</h2>
+          </div>
+          <p class="lead">사장님들이 자주 물어보시는 것부터 씁니다.</p>
+        </div>
+        <ol class="topic-grid">
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">01</span> AI 검색</p>
+            <h3 class="topic__title">손님이 챗GPT로 맛집을 찾습니다. 사장님이 지금 해둘 일</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">02</span> 대행사 고르기</p>
+            <h3 class="topic__title">대행사를 바꾸기 전에 확인할 5가지</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">03</span> 메뉴</p>
+            <h3 class="topic__title">2·3인 세트메뉴를 제안하고 일매출이 약 3배가 된 가게</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">04</span> 인스타 광고</p>
+            <h3 class="topic__title">손님이 적은 가게가 인스타 광고로 첫 손님을 받는 순서</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">05</span> 광고비</p>
+            <h3 class="topic__title">제주 성수기 광고비가 비싼 이유와 아끼는 법</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">06</span> 네이버 플레이스</p>
+            <h3 class="topic__title">플레이스 상위 노출, 보장한다는 말을 믿으면 안 되는 이유</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">07</span> 업종별 홍보</p>
+            <h3 class="topic__title">제주 필라테스·PT샵이 오픈 첫 달에 해야 할 것</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">08</span> 영상</p>
+            <h3 class="topic__title">릴스 한 편에 얼마가 드나요 — 제주 홍보 영상 비용 정리</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">09</span> 후기 대응</p>
+            <h3 class="topic__title">나쁜 후기가 달렸을 때 사장님이 할 수 있는 일</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">10</span> 인스타 운영</p>
+            <h3 class="topic__title">제주 옷가게·소품샵의 인스타 운영법</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">11</span> 관광객 홍보</p>
+            <h3 class="topic__title">관광객이 제주에 오기 전에 우리 가게를 알게 하는 법</h3>
+          </li>
+          <li class="topic reveal">
+            <p class="topic__meta"><span class="topic__num">12</span> 광고비</p>
+            <h3 class="topic__title">광고비 얼마부터 시작하면 되나요</h3>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= 4. 하단 문의 (모든 페이지 공통) ================= -->
+</BaseLayout>
