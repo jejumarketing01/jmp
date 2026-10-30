@@ -1,0 +1,66 @@
+/* =========================================================
+   소개 페이지 전용 스타일
+   공통(page-intro, split, stat, def-list, wide-photo, contact)은 design-system.css 에 있다.
+   ========================================================= */
+main { overflow-x: clip; }
+.split__label { text-transform: uppercase; letter-spacing: 0.12em; }
+.h2 .line { display: block; }
+
+/* 1. 인트로: 세로 인물 사진 ------------------------------ */
+@media (min-width: 960px) {
+  .about-intro .page-intro__inner { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+  .about-intro__visual { width: min(100%, 440px); justify-self: end; }
+}
+@media (max-width: 959px) { .about-intro__visual { width: min(100%, 420px); } }
+
+/* 2. 대표 인사 ------------------------------------------- */
+.greeting__lead { font-size: var(--fs-h3); font-weight: 700; color: var(--c-ink); line-height: 1.5; }
+.greeting__text { margin-top: var(--sp-3); color: var(--c-muted); font-size: var(--fs-lead); line-height: 1.8; }
+.greeting__sign { display: flex; align-items: baseline; gap: 0.75rem; margin-top: var(--sp-5); padding-top: var(--sp-3); border-top: 1px solid var(--c-line); }
+.greeting__sign strong { font-size: 1.25rem; color: var(--c-ink); }
+.greeting__sign span { font-size: var(--fs-small); color: var(--c-muted); }
+
+/* 3. 숫자로 보는 기록 ------------------------------------ */
+.record__inner { display: grid; gap: var(--sp-4); align-items: end; }
+.record__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
+.record__stats .stat { display: flex; flex-direction: column-reverse; justify-content: flex-end; padding-top: var(--sp-3); border-top: 1px solid var(--c-ink); }
+.record__stats dd { margin: 0; }
+.record__stats .stat__num em { font-size: 0.5em; margin-left: 2px; }
+@media (max-width: 599px) { .record__stats .stat__num { font-size: 1.75rem; } .record__stats .stat__label { font-size: 0.8125rem; } }
+@media (min-width: 960px) { .record__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(3rem, 7vw, 7rem); } }
+
+/* 4. 강의 ------------------------------------------------ */
+.lecture-list { border-top: 1px solid var(--c-ink); }
+.lecture-list > li { display: grid; gap: 0.25rem; padding-block: var(--sp-3); border-bottom: 1px solid var(--c-line); }
+.lecture-list__date { font-size: var(--fs-small); font-weight: 700; color: var(--c-point-text); }
+.lecture-list__title { font-size: 1.1875rem; font-weight: 700; color: var(--c-ink); line-height: 1.5; }
+.lecture-list__sub { margin-top: 0.25rem; font-size: var(--fs-small); color: var(--c-muted); }
+@media (min-width: 640px) { .lecture-list > li { grid-template-columns: 8rem 1fr; gap: var(--sp-3); } }
+.lecture__photos { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-2); margin-top: var(--sp-5); }
+.lecture__photos > :nth-child(2) { margin-top: var(--sp-5); }   /* 어긋나게 */
+
+/* 5. 자격증·수상 ----------------------------------------- */
+.certs__head { margin-bottom: var(--sp-5); }
+.certs__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-4) var(--sp-3); }
+.cert__img { padding: var(--sp-3); background: #fff; }
+.cert figcaption { padding-top: var(--sp-2); border-top: 2px solid var(--c-point); margin-top: var(--sp-2); }
+.cert__name { font-size: 1.0625rem; font-weight: 700; color: var(--c-ink); line-height: 1.5; }
+.cert__by { margin-top: 0.25rem; font-size: 0.875rem; color: var(--c-muted); }
+@media (min-width: 800px) { .certs__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .certs__grid { grid-template-columns: repeat(6, 1fr); } .cert__img { padding: var(--sp-2); } }
+
+/* 6. 오시는 길 ------------------------------------------- */
+.office__inner { display: grid; gap: var(--sp-5); }
+.office__address { margin-top: var(--sp-3); font-size: var(--fs-h3); font-weight: 700; color: var(--c-ink); line-height: 1.5; }
+.office__text { margin-top: var(--sp-2); color: var(--c-muted); }
+.office__list { margin-top: var(--sp-4); }
+.office__list dd a:hover { color: var(--c-point-text); }
+.office__maps { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); margin-top: var(--sp-4); }
+.office__visual { display: grid; gap: var(--sp-2); }
+.office__map { aspect-ratio: 4 / 3; background: var(--c-slot); }
+.office__map iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(0.3); }
+@media (min-width: 960px) {
+  .office__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(3rem, 7vw, 7rem); align-items: start; }
+  .office__visual { grid-template-columns: 1.4fr 1fr; align-items: end; }
+  .office__map { aspect-ratio: 1 / 1; }
+}

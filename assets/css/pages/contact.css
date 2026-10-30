@@ -1,0 +1,132 @@
+/* =========================================================
+   문의 페이지 전용 스타일
+   공통(page-intro, split, jump-links, def-list, contact 버튼)은 design-system.css 에 있다.
+   ========================================================= */
+main { overflow-x: clip; }
+.split__label { text-transform: uppercase; letter-spacing: 0.12em; }
+.display .line { display: block; }
+
+/* 1. 인트로: 연락 방법 3가지 ------------------------------ */
+.ways { display: grid; border-top: 1px solid var(--c-ink); }
+.way { border-bottom: 1px solid var(--c-line); }
+.way__link {
+  display: grid; grid-template-columns: 3rem 1fr auto; align-items: center; gap: 0.25rem var(--sp-2);
+  padding: var(--sp-3) 0; color: var(--c-ink); transition: padding .3s var(--ease), color .25s;
+}
+.way__link::after { content: "→"; grid-row: 1 / span 2; grid-column: 3; color: var(--c-faint); transition: color .25s, transform .3s var(--ease); }
+.way__link:hover { padding-left: 0.75rem; }
+.way__link:hover::after { color: var(--c-point); transform: translateX(4px); }
+.way__num { grid-row: 1 / span 2; font-size: var(--fs-small); font-weight: 700; color: var(--c-point-text); }
+.way__title { font-size: var(--fs-h3); font-weight: 700; line-height: 1.4; }
+.way__link:hover .way__title { color: var(--c-point-text); }
+.way__text { grid-column: 2; font-size: var(--fs-small); color: var(--c-muted); }
+.way__text strong { display: block; font-size: 1.125rem; color: var(--c-ink); }
+
+/* 2. 상담 신청 폼 ----------------------------------------- */
+.req-mark, .req { display: inline-block; padding: 0.0625rem 0.4rem; margin-left: 0.25rem; font-size: 0.75rem; font-weight: 700; color: var(--c-point-text); border: 1px solid currentColor; line-height: 1.5; vertical-align: 0.1em; }
+.req-mark { margin: 0 0.25rem 0 0; }
+.opt { margin-left: 0.375rem; font-size: 0.8125rem; font-weight: 500; color: var(--c-faint); }
+
+.consult-form { display: grid; gap: var(--sp-3); padding: clamp(1.5rem, 4vw, 3rem); background: #fff; border-top: 3px solid var(--c-point); }
+.field-row { display: grid; gap: var(--sp-3); }
+@media (min-width: 640px) { .field-row { grid-template-columns: 1fr 1fr; } .field--half { max-width: calc(50% - var(--sp-3) / 2); } }
+.field { display: grid; gap: 0.5rem; min-width: 0; border: 0; padding: 0; margin: 0; }
+.field > label, .field > legend { font-weight: 700; color: var(--c-ink); padding: 0; }
+.field input[type="text"], .field input[type="tel"], .field select, .field textarea {
+  width: 100%; padding: 0.875rem 1rem; font: inherit; font-size: 1rem; color: var(--c-ink);
+  background: #fff; border: 1px solid #cfcfcf; border-radius: 0; transition: border-color .2s, box-shadow .2s;
+}
+.field textarea { resize: vertical; min-height: 7.5rem; line-height: 1.6; }
+.field select { appearance: none; padding-right: 2.75rem; cursor: pointer;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23111' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 1rem center; }
+.field ::placeholder { color: #a6a6a6; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--c-ink); box-shadow: 0 0 0 3px rgba(242,57,2,.18); }
+.field [aria-invalid="true"] { border-color: var(--c-point); }
+.field__error { font-size: 0.875rem; color: var(--c-point-text); }
+
+/* 더 알려주실 내용 (접기) */
+.more { border: 1px solid var(--c-line); }
+.more > summary, .agree__detail > summary { cursor: pointer; list-style: none; }
+.more > summary::-webkit-details-marker, .agree__detail > summary::-webkit-details-marker { display: none; }
+.more > summary { display: flex; align-items: center; padding: 1.125rem 1.25rem; font-weight: 700; color: var(--c-ink); }
+.more > summary::after { content: "+"; margin-left: auto; font-size: 1.375rem; font-weight: 400; line-height: 1; color: var(--c-point); transition: transform .3s var(--ease); }
+.more[open] > summary::after { transform: rotate(45deg); }
+.more__body { display: grid; gap: var(--sp-3); padding: 0 1.25rem 1.5rem; }
+.choices { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.choice span { display: inline-block; padding: 0.625rem 1rem; font-size: var(--fs-small); border: 1px solid #cfcfcf; background: #fff; transition: border-color .2s, background .2s, color .2s; }
+.choice input:hover + span { border-color: var(--c-ink); }
+.choice input:checked + span { background: var(--c-ink); border-color: var(--c-ink); color: #fff; }
+.choice input:focus-visible + span { outline: 2px solid var(--c-point); outline-offset: 2px; }
+#f-budget-custom { margin-top: 0.25rem; max-width: 20rem; }
+
+/* 동의 */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.agree { display: grid; gap: 0.5rem; padding-top: var(--sp-3); border-top: 1px solid var(--c-line); }
+.agree__check { display: flex; align-items: flex-start; gap: 0.625rem; cursor: pointer; color: var(--c-ink); }
+.agree__check input { width: 1.125rem; height: 1.125rem; margin-top: 0.3rem; accent-color: var(--c-point); flex: none; }
+.agree__detail > summary { display: inline-block; margin-left: 1.75rem; font-size: var(--fs-small); color: var(--c-muted); text-decoration: underline; text-underline-offset: 3px; }
+.agree__detail > summary:hover { color: var(--c-point-text); }
+.agree__list { margin: 0.75rem 0 0 1.75rem; padding: 1rem 1.25rem; background: var(--c-bg-soft); font-size: var(--fs-small); }
+.agree__list > div { display: grid; gap: 0.125rem; padding-block: 0.5rem; }
+.agree__list > div + div { border-top: 1px solid var(--c-line); }
+.agree__list dt { font-weight: 700; color: var(--c-ink); }
+.agree__list dd { color: var(--c-muted); }
+@media (min-width: 640px) { .agree__list > div { grid-template-columns: 8rem 1fr; gap: var(--sp-2); } }
+
+.consult-form__submit { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem var(--sp-3); }
+.consult-form__submit .btn-note { margin: 0; }
+.consult-form button[disabled] { opacity: .6; cursor: progress; }
+.form-status:empty { display: none; }
+.form-status { padding: 1rem 1.25rem; font-weight: 600; color: var(--c-ink); background: var(--c-peach); border-left: 3px solid var(--c-point); }
+.form-status.is-error { background: #fff4f0; }
+
+/* 3. 문의하신 뒤에는 -------------------------------------- */
+.after__head { margin-bottom: var(--sp-5); }
+.after__steps { display: grid; gap: var(--sp-4); counter-reset: none; }
+.step { position: relative; padding-top: var(--sp-3); border-top: 1px solid var(--c-ink); }
+.step__num { font-size: var(--fs-small); font-weight: 700; color: var(--c-point-text); }
+.step__title { margin-top: 0.5rem; font-size: var(--fs-h3); font-weight: 700; color: var(--c-ink); line-height: 1.45; }
+.step__text { margin-top: 0.5rem; color: var(--c-muted); }
+@media (min-width: 860px) {
+  .after__steps { grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
+  .step::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--c-point); }
+}
+
+/* 4. 오시는 길 (소개 페이지와 같은 모양) ------------------ */
+.office__inner { display: grid; gap: var(--sp-5); }
+.office__address { margin-top: var(--sp-3); font-size: var(--fs-h3); font-weight: 700; color: var(--c-ink); line-height: 1.5; }
+.office__text { margin-top: var(--sp-2); color: var(--c-muted); }
+.office__list { margin-top: var(--sp-4); }
+.office__list dd a:hover { color: var(--c-point-text); }
+.office__maps { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); margin-top: var(--sp-4); }
+.office__visual { display: grid; gap: var(--sp-2); }
+.office__map { aspect-ratio: 4 / 3; background: var(--c-slot); }
+.office__map iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(0.3); }
+@media (min-width: 960px) {
+  .office__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(3rem, 7vw, 7rem); align-items: start; }
+  .office__visual { grid-template-columns: 1.4fr 1fr; align-items: end; }
+  .office__map { aspect-ratio: 1 / 1; }
+}
+
+/* 5. 자주 묻는 질문 --------------------------------------- */
+.faq__nav { margin-top: var(--sp-4); }
+@media (max-width: 959px) { .faq__nav { display: flex; flex-wrap: wrap; gap: 0.5rem; border-top: 0; }
+  .faq__nav a { padding: 0.5rem 0.875rem; border: 1px solid var(--c-line); }
+  .faq__nav a::after { content: none; } }
+.faq__group { scroll-margin-top: calc(var(--header-h) + 1rem); }
+.faq__group + .faq__group { margin-top: var(--sp-5); }
+.faq__cat { display: flex; align-items: center; gap: 0.75rem; padding-bottom: var(--sp-2); font-size: var(--fs-small); font-weight: 700; color: var(--c-point-text); border-bottom: 1px solid var(--c-ink); }
+.faq__cat::before { content: ""; width: 28px; height: 2px; background: var(--c-point); }
+.faq__item { border-bottom: 1px solid var(--c-line); }
+.faq__item > summary { display: flex; align-items: flex-start; gap: var(--sp-2); padding: 1.25rem 0; cursor: pointer; list-style: none; }
+.faq__item > summary::-webkit-details-marker { display: none; }
+.faq__item > summary::before { content: "Q"; flex: none; font-weight: 700; color: var(--c-point); line-height: 1.5; }
+.faq__item > summary::after { content: "+"; flex: none; margin-left: auto; font-size: 1.375rem; line-height: 1.1; color: var(--c-faint); transition: transform .3s var(--ease), color .25s; }
+.faq__item[open] > summary::after { transform: rotate(45deg); color: var(--c-point); }
+.faq__q { font-size: 1.125rem; font-weight: 700; color: var(--c-ink); line-height: 1.5; }
+.faq__item > summary:hover .faq__q { color: var(--c-point-text); }
+.faq__a { padding: 0 2.5rem 1.5rem calc(var(--sp-2) + 0.9rem); color: var(--c-text); line-height: 1.75; }
+.faq__a p + p { margin-top: 0.25rem; }
+.faq__a a { color: var(--c-point-text); text-decoration: underline; text-underline-offset: 3px; }

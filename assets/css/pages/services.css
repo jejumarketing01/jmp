@@ -1,0 +1,127 @@
+/* =========================================================
+   서비스 페이지 전용 스타일
+   공통 토큰·컴포넌트(page-intro, jump-links, wide-photo, contact)는
+   design-system.css 에 있다.
+   ========================================================= */
+main { overflow-x: clip; }
+
+/* 인트로 ------------------------------------------------- */
+.page-intro__lead p + p { margin-top: 0.25rem; }
+@media (min-width: 960px) { .page-services .jump-links { max-width: 440px; } }
+
+/* 서비스 블록 공통 (01 영상 · 02 광고 · 03 컨설팅) -------- */
+.svc__grid { display: grid; gap: var(--sp-5); }
+.svc__label {
+  display: flex; align-items: center; gap: 0.75rem; margin-bottom: var(--sp-3);
+  font-size: var(--fs-small); font-weight: 700; color: var(--c-ink);
+}
+.svc__label span { color: var(--c-point-text); }
+.svc__label::after { content: ""; width: 40px; height: 1px; background: var(--c-point); }
+.svc__head .h2 { max-width: 15em; }
+.svc__head .accent { white-space: nowrap; }
+.svc__lead { margin-top: var(--sp-3); color: var(--c-muted); font-size: var(--fs-lead); line-height: 1.7; }
+.svc__head .link-arrow { margin-top: var(--sp-4); }
+@media (min-width: 960px) {
+  .svc__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(3rem, 7vw, 7rem); align-items: start; }
+  .svc__head { position: sticky; top: calc(var(--header-h) + 2rem); }
+  .svc__grid--media { align-items: center; }
+  .svc__grid--media .svc__head { position: static; }
+}
+
+/* 01 영상: 4가지 구성 ------------------------------------ */
+.feature-grid { display: grid; gap: 0 var(--sp-4); border-top: 1px solid var(--c-ink); }
+.feature-grid li { display: grid; grid-template-columns: 2.5rem 1fr; column-gap: var(--sp-2); padding-block: var(--sp-4); border-bottom: 1px solid var(--c-line); }
+.feature-grid__num { grid-row: span 2; font-size: var(--fs-small); font-weight: 700; color: var(--c-point-text); padding-top: 0.2rem; }
+.feature-grid .h3 { margin-bottom: 0.375rem; }
+.feature-grid p { color: var(--c-muted); }
+@media (min-width: 640px) { .feature-grid { grid-template-columns: 1fr 1fr; } }
+
+/* 01 영상: 출연 안내 */
+.notice { align-self: start; padding: var(--sp-4) var(--sp-4) var(--sp-4) calc(var(--sp-4) + 4px); background: #fff; border-left: 3px solid var(--c-point); }
+.notice .h3 { margin-bottom: var(--sp-2); }
+.notice p { color: var(--c-muted); }
+
+/* 01 영상: 예시 세로 영상 3개 (가운데를 아래로 내려 Borgholm 포트폴리오처럼 어긋나게) */
+.shorts { display: grid; gap: var(--sp-5); margin-top: clamp(4rem, 8vw, 7rem); }
+.shorts__list {
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(64vw, 260px); gap: var(--sp-3);
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter);
+}
+.shorts__list::-webkit-scrollbar { display: none; }
+.shorts__list > li { scroll-snap-align: start; }
+.shorts__item figcaption { margin-top: var(--sp-2); font-size: var(--fs-small); color: var(--c-muted); }
+.shorts__item figcaption strong { color: var(--c-ink); }
+.shorts__list > li:nth-child(2) .img-slot { background-color: #f6ddd0; }
+.shorts__list > li:nth-child(3) .img-slot { background-color: #e3e1dc; }
+@media (min-width: 960px) {
+  .shorts { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(3rem, 7vw, 7rem); }
+  .notice { position: sticky; top: calc(var(--header-h) + 2rem); }
+  .shorts__list { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; margin: 0; padding: 0 0 var(--sp-6); gap: clamp(1rem, 2vw, 1.75rem); }
+  .shorts__list > li:nth-child(2) { transform: translateY(var(--sp-6)); }
+}
+
+/* 02 광고 ------------------------------------------------ */
+@media (min-width: 960px) { .svc__media .img-slot { box-shadow: -24px 24px 0 var(--c-peach); } }
+.ad-cards { display: grid; gap: var(--sp-3); margin-top: clamp(3rem, 6vw, 5rem); }
+.ad-card { padding: var(--sp-4); background: var(--c-bg-soft); border-top: 3px solid var(--c-point); }
+.ad-card .h3 { margin-bottom: var(--sp-2); }
+.ad-card p { color: var(--c-muted); }
+.ad-card__note { margin-top: var(--sp-2); padding-top: var(--sp-2); border-top: 1px solid var(--c-line); font-size: var(--fs-small); }
+@media (min-width: 720px) { .ad-cards { grid-template-columns: 1fr 1fr; } }
+.svc__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-2) var(--sp-4); margin-top: var(--sp-4); }
+.svc__cost { display: flex; align-items: center; gap: 0.5rem; font-size: var(--fs-small); color: var(--c-ink); font-weight: 600; }
+.svc__cost::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-point); flex: none; }
+
+/* 03 컨설팅: 결과 목록 ----------------------------------- */
+.result-list { border-top: 1px solid var(--c-ink); }
+.result-list > li { border-bottom: 1px solid var(--c-line); }
+.result { display: grid; gap: 0.25rem; padding-block: var(--sp-4); }
+.result__name { font-size: 1.125rem; font-weight: 700; color: var(--c-ink); letter-spacing: 0; }
+.result__meta { font-size: var(--fs-small); color: var(--c-muted); }
+.result__num { margin-top: 0.5rem; font-size: clamp(1.375rem, 1.15rem + 0.8vw, 1.625rem); font-weight: 800; letter-spacing: 0; line-height: 1.3; color: var(--c-point); }
+@media (min-width: 720px) {
+  .result { grid-template-columns: 9.5rem 1fr; column-gap: var(--sp-4); }
+  .result__name { grid-row: span 2; padding-top: 0.15rem; }
+  .result__num { grid-column: 2; margin-top: 0.25rem; }
+}
+
+/* 진행 순서 ---------------------------------------------- */
+.process__head { margin-bottom: var(--sp-5); }
+.process__head .lead { margin-top: var(--sp-2); }
+.steps { counter-reset: step; display: grid; gap: 0; }
+.steps > li {
+  counter-increment: step; position: relative;
+  padding: 0 0 var(--sp-4) calc(var(--sp-4) + 8px); border-left: 1px solid #d9d9d9; margin-left: 6px;
+}
+.steps > li:last-child { border-left-color: transparent; }
+.steps > li::before {                         /* 주황 점 */
+  content: ""; position: absolute; left: -7px; top: 0.2rem; width: 13px; height: 13px; border-radius: 50%;
+  background: var(--c-bg-soft); border: 2px solid var(--c-point);
+}
+.steps > li:last-child::before { background: var(--c-point); }
+.steps__title { font-size: 1.1875rem; font-weight: 700; color: var(--c-ink); letter-spacing: 0; }
+.steps__title::before { content: counter(step, decimal-leading-zero); display: block; margin-bottom: 0.25rem; font-size: 0.8125rem; color: var(--c-point-text); letter-spacing: 0.04em; }
+.steps p { margin-top: 0.5rem; font-size: var(--fs-small); color: var(--c-muted); line-height: 1.65; }
+@media (min-width: 960px) {
+  .steps { grid-template-columns: repeat(6, 1fr); gap: var(--sp-3); }
+  .steps > li { padding: var(--sp-4) 0 0; margin-left: 0; border-left: 0; border-top: 1px solid #d9d9d9; }
+  .steps > li::before { left: 0; top: -7px; }
+}
+
+/* 하지 않는 일 ------------------------------------------- */
+.not-do { padding-block: clamp(4rem, 7vw, 6.5rem); }
+.not-do__inner { display: grid; gap: var(--sp-4); align-items: center; }
+.not-do .lead { margin-top: var(--sp-2); }
+.not-do__list { display: grid; gap: var(--sp-2); }
+.not-do__list li {
+  display: flex; align-items: center; gap: var(--sp-2); padding: 1.25rem var(--sp-3);
+  background: #fff; font-weight: 700; color: var(--c-ink); font-size: 1.0625rem;
+}
+.not-do__list li::before {                    /* 주황 빗금 (× 대신) */
+  content: ""; width: 18px; height: 2px; background: var(--c-point); transform: rotate(-45deg); flex: none;
+}
+@media (min-width: 960px) {
+  .not-do__inner { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--sp-6); }
+  .not-do__list { grid-template-columns: repeat(3, 1fr); }
+}
