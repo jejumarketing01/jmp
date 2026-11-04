@@ -39,9 +39,9 @@ main { overflow-x: clip; }
 
 .hero__visual { display: grid; position: relative; }
 .hero__media { grid-area: 1 / 1; opacity: 0; transition: opacity .9s var(--ease); }
-.hero__media .img-slot { transform: scale(1.04); transition: transform 6s linear; }
+.hero__media .img-slot, .hero__media .img-cover { transform: scale(1.04); transition: transform 6s linear; }
 .hero__media.is-active { opacity: 1; }
-.hero__media.is-active .img-slot { transform: scale(1); }
+.hero__media.is-active .img-slot, .hero__media.is-active .img-cover { transform: scale(1); }
 .hero__media { position: relative; z-index: 1; }
 .hero__visual::before {                  /* 사진 뒤로 살짝 보이는 주황 원 (헤더 원과 같은 모양) */
   content: ""; position: absolute; z-index: 0; left: -44px; top: -44px;

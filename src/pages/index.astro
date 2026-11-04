@@ -15,6 +15,7 @@ const page = {
 
 <BaseLayout {...page}>
   <Fragment slot="head">
+  <link rel="preload" as="image" href="/assets/img/home/hero-1.webp" type="image/webp" fetchpriority="high">
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,8 +68,7 @@ const page = {
 
           <div class="hero__cta">
             <div class="btn-group">
-              <!-- TODO: 카카오톡 채널 주소로 교체 -->
-              <a class="btn btn--primary" href="https://pf.kakao.com/" data-todo="kakao-url">카카오톡으로 문의하기</a>
+              <a class="btn btn--primary" href="https://pf.kakao.com/_xhxlYGG/chat" target="_blank" rel="noopener">카카오톡으로 문의하기</a>
               <a class="btn btn--ghost" href="/contact#consult">상담 신청하기</a>
             </div>
             <p class="btn-note">신청해 주시면 전화로 먼저 안내드립니다</p>
@@ -77,19 +77,13 @@ const page = {
 
         <div class="hero__visual" data-hero-visuals>
           <div class="hero__media is-active">
-            <div class="img-slot ratio-16x10" role="img" aria-label="대표가 가게에서 사장님과 이야기하는 모습">
-              <p class="img-slot__text"><strong>HERO-1 · 16:10 · 1600×1000</strong>대표가 가게 테이블에 앉아 사장님과 마주 보고 이야기하는 모습</p>
-            </div>
+            <img class="img-cover ratio-16x10" src="/assets/img/home/hero-1.webp" alt="대표가 가게에서 사장님과 이야기하는 모습" width="1600" height="1000" fetchpriority="high">
           </div>
           <div class="hero__media" aria-hidden="true">
-            <div class="img-slot ratio-16x10" role="img" aria-label="가게에서 홍보 영상을 촬영하는 모습">
-              <p class="img-slot__text"><strong>HERO-2 · 16:10 · 1600×1000</strong>가게 안에서 음식이나 사장님을 촬영하는 현장. 촬영 장비가 보이게</p>
-            </div>
+            <img class="img-cover ratio-16x10" src="/assets/img/home/hero-2.webp" alt="" width="1600" height="1000">
           </div>
           <div class="hero__media" aria-hidden="true">
-            <div class="img-slot ratio-16x10" role="img" aria-label="손님이 가게 앞에서 기다리는 모습">
-              <p class="img-slot__text"><strong>HERO-3 · 16:10 · 1600×1000</strong>손님으로 붐비는 가게 입구나 웨이팅 줄, 웃으며 손님을 맞는 사장님</p>
-            </div>
+            <img class="img-cover ratio-16x10" src="/assets/img/home/hero-3.webp" alt="" width="1600" height="1000">
           </div>
         </div>
 
@@ -141,9 +135,7 @@ const page = {
         <ul class="rail services__rail" data-rail="services">
           <li>
             <article class="service-card">
-              <div class="img-slot ratio-4x3" role="img" aria-label="음식을 촬영하는 장면">
-                <p class="img-slot__text"><strong>SERVICE-VIDEO · 4:3 · 1200×900</strong>음식 위로 카메라를 든 촬영 장면 클로즈업</p>
-              </div>
+              <img class="img-cover ratio-4x3" src="/assets/img/home/service-video.webp" alt="음식을 촬영하는 장면" width="1200" height="900" loading="lazy">
               <div class="service-card__body">
                 <p class="service-card__tag">영상</p>
                 <h3 class="h3">인스타·유튜브용 20초 홍보 영상을 만듭니다</h3>
@@ -153,9 +145,7 @@ const page = {
           </li>
           <li>
             <article class="service-card">
-              <div class="img-slot ratio-4x3" role="img" aria-label="광고 결과 화면을 사장님께 설명하는 모습">
-                <p class="img-slot__text"><strong>SERVICE-ADS · 4:3 · 1200×900</strong>노트북·휴대폰의 광고 결과 화면을 사장님께 짚어 설명하는 손</p>
-              </div>
+              <img class="img-cover ratio-4x3" src="/assets/img/home/service-ads.webp" alt="광고 결과 화면을 사장님께 설명하는 모습" width="1200" height="900" loading="lazy">
               <div class="service-card__body">
                 <p class="service-card__tag">광고</p>
                 <h3 class="h3">광고 결과, 숫자로 보여드립니다</h3>
@@ -166,9 +156,7 @@ const page = {
           </li>
           <li>
             <article class="service-card">
-              <div class="img-slot ratio-4x3" role="img" aria-label="가게 간판과 입구를 살펴보는 모습">
-                <p class="img-slot__text"><strong>SERVICE-CONSULT · 4:3 · 1200×900</strong>가게 밖에서 간판과 입구를 함께 살펴보는 모습</p>
-              </div>
+              <img class="img-cover ratio-4x3" src="/assets/img/home/service-consult.webp" alt="가게 운영 방향을 상담하는 모습" width="1200" height="900" loading="lazy">
               <div class="service-card__body">
                 <!-- TODO: 서비스 이름 '컨설팅' 확정 필요 -->
                 <p class="service-card__tag">컨설팅</p>
@@ -185,16 +173,13 @@ const page = {
     <section class="section section--peach cta-band" aria-labelledby="band-title">
       <div class="container cta-band__inner reveal">
         <h2 class="h2" id="band-title">견적이 궁금하신가요?</h2>
-        <!-- TODO: 카카오톡 채널 주소로 교체 -->
-        <a class="btn btn--primary" href="https://pf.kakao.com/" data-todo="kakao-url">카카오톡으로 문의하기</a>
+        <a class="btn btn--primary" href="https://pf.kakao.com/_xhxlYGG/chat" target="_blank" rel="noopener">카카오톡으로 문의하기</a>
       </div>
     </section>
 
     <!-- ================= 5. 차별점 ================= -->
     <div class="wide-photo">
-      <div class="img-slot ratio-21x9" role="img" aria-label="가게에서 사장님과 저희 팀이 함께 이야기하는 모습">
-        <p class="img-slot__text"><strong>WIDE-MEETING · 21:9 · 2400×1030</strong>가게 안 넓은 장면. 사장님과 대표·담당자가 함께 이야기하는 모습. 가로로 긴 사진</p>
-      </div>
+      <img class="img-cover ratio-21x9" src="/assets/img/home/wide-meeting.webp" alt="가게에서 사장님과 저희 팀이 함께 이야기하는 모습" width="2400" height="1030" loading="lazy">
     </div>
 
     <section class="section why" id="why" aria-labelledby="why-title">
@@ -204,9 +189,7 @@ const page = {
           <h2 class="h2" id="why-title">이런 점이 <span class="accent">다릅니다</span></h2>
 
           <aside class="ceo" aria-label="대표 소개">
-            <div class="img-slot ratio-1x1 ceo__photo" role="img" aria-label="대표 한승지">
-              <p class="img-slot__text"><strong>CEO · 1:1 · 800×800</strong>대표 한승지 사진 (스톡 사진 대체 금지)</p>
-            </div>
+            <img class="img-cover ratio-1x1 ceo__photo" src="/assets/img/home/ceo.webp" alt="대표 한승지" width="800" height="800" loading="lazy">
             <div>
               <p class="ceo__name">대표 한승지</p>
               <p class="ceo__text">매달 사장님들께 마케팅 강의를 합니다.</p>
@@ -295,9 +278,7 @@ const page = {
           </li>
           <li>
             <article class="case-card">
-              <div class="img-slot ratio-3x4" role="img" aria-label="다정이네김밥">
-                <p class="img-slot__text"><strong>CASE-3 · 3:4 · 900×1200</strong>다정이네김밥: 김밥 메뉴 또는 지점 외관</p>
-              </div>
+              <img class="img-cover ratio-3x4" src="/assets/img/home/case-3.webp" alt="다정이네김밥 외관" width="900" height="1200" loading="lazy">
               <p class="case-card__meta">김밥 전문점</p>
               <h3 class="case-card__name">다정이네김밥</h3>
               <p class="case-card__result">지점당 일매출 300~500만원</p>
@@ -306,9 +287,7 @@ const page = {
           </li>
           <li>
             <article class="case-card">
-              <div class="img-slot ratio-1x1" role="img" aria-label="고윤호 재활PT&amp;요가">
-                <p class="img-slot__text"><strong>CASE-2 · 1:1 · 900×900</strong>고윤호 재활PT&amp;요가: 운동 공간 또는 수업 장면</p>
-              </div>
+              <img class="img-cover ratio-1x1" src="/assets/img/home/case-2.webp" alt="고윤호 재활PT&amp;요가 외관" width="900" height="900" loading="lazy">
               <p class="case-card__meta">재활PT·요가 · 제주시 아라동</p>
               <h3 class="case-card__name">고윤호 재활PT&amp;요가</h3>
               <p class="case-card__result">오픈 첫 달 매출 1,000만원 → 둘째 달 1,500만원</p>
@@ -343,11 +322,8 @@ const page = {
     <!-- ================= 8. 홍보 영상 샘플 ================= -->
     <section class="video" aria-labelledby="video-title">
       <h2 class="sr-only" id="video-title">저희가 만든 홍보 영상</h2>
-      <div class="img-slot ratio-21x9 video__poster" role="img" aria-label="홍보 영상의 한 장면">
-        <p class="img-slot__text"><strong>VIDEO-POSTER · 21:9 · 2400×1030</strong>저희가 만든 홍보 영상의 한 장면. 실제 영상(mp4 또는 유튜브 주소)도 함께 필요</p>
-      </div>
-      <!-- TODO: 영상 주소를 data-video-src 에 넣는다 -->
-      <button class="video__play" type="button" data-video-src="">
+      <img class="img-cover ratio-21x9 video__poster" src="/assets/img/home/video-poster.webp" alt="홍보 영상의 한 장면" width="2400" height="1030" loading="lazy">
+      <button class="video__play" type="button" data-video-src="https://www.youtube.com/watch?v=gFTxOoaexqE">
         <span class="sr-only">홍보 영상 재생</span>
       </button>
     </section>

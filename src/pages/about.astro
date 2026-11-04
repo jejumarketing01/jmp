@@ -16,6 +16,7 @@ const page = {
 
 <BaseLayout {...page}>
   <Fragment slot="head">
+<link rel="preload" as="image" href="/assets/img/about/about-ceo.webp" type="image/webp" fetchpriority="high">
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,9 +44,7 @@ const page = {
           <p class="lead page-intro__lead">제주에서 가게 사장님들의 홍보를 돕고 있습니다.</p>
         </div>
         <div class="page-intro__visual about-intro__visual">
-          <div class="img-slot ratio-3x4" role="img" aria-label="대표 한승지">
-              <p class="img-slot__text"><strong>ABOUT-CEO · 3:4 · 900×1200</strong>대표 한승지 인물 사진 (상반신, 밝은 배경)</p>
-            </div>
+          <img class="img-cover ratio-3x4" src="/assets/img/about/about-ceo.webp" alt="대표 한승지" width="900" height="1200" fetchpriority="high">
         </div>
       </div>
     </section>
@@ -85,9 +84,7 @@ const page = {
     </section>
 
     <div class="wide-photo">
-      <div class="img-slot ratio-21x9" role="img" aria-label="사장님들께 마케팅 강의를 하는 모습">
-              <p class="img-slot__text"><strong>ABOUT-LECTURE-WIDE · 21:9 · 2400×1030</strong>강의 현장 넓은 사진. 대표가 앞에서 설명하고 사장님들이 듣는 모습</p>
-            </div>
+      <img class="img-cover ratio-21x9" src="/assets/img/about/about-lecture-wide.webp" alt="사장님들께 마케팅 강의를 하는 모습" width="2400" height="1030" loading="lazy">
     </div>
 
     <!-- ================= 4. 강의 ================= -->
@@ -117,12 +114,8 @@ const page = {
             </li>
           </ol>
           <div class="lecture__photos reveal">
-            <div class="img-slot ratio-4x3" role="img" aria-label="강의하는 대표 한승지">
-              <p class="img-slot__text"><strong>ABOUT-LECTURE-1 · 4:3 · 1200×900</strong>강의 자료 화면과 대표</p>
-            </div>
-            <div class="img-slot ratio-4x3" role="img" aria-label="강의를 듣는 사장님들">
-              <p class="img-slot__text"><strong>ABOUT-LECTURE-2 · 4:3 · 1200×900</strong>강의를 듣는 사장님들 (얼굴이 크게 보이지 않게)</p>
-            </div>
+            <img class="img-cover ratio-4x3" src="/assets/img/about/about-lecture-1.webp" alt="강의하는 대표 한승지" width="1200" height="900" loading="lazy">
+            <img class="img-cover ratio-4x3" src="/assets/img/about/about-lecture-2.webp" alt="강의를 듣는 사장님들" width="1200" height="900" loading="lazy">
           </div>
         </div>
       </div>
@@ -139,9 +132,7 @@ const page = {
           <li class="cert reveal">
             <figure>
               <div class="cert__img">
-                <div class="img-slot ratio-3x4" role="img" aria-label="마케팅 전문강사 임명장">
-              <p class="img-slot__text"><strong>CERT-01 · 3:4 · 600×800</strong>마케팅 전문강사 임명장 사진 (스캔 또는 촬영)</p>
-            </div>
+                <img class="img-cover ratio-3x4" src="/assets/img/about/cert-01.webp" alt="마케팅 전문강사 임명장" width="600" height="800" loading="lazy">
               </div>
               <figcaption>
                 <h3 class="cert__name">마케팅 전문강사 임명장</h3>
@@ -151,9 +142,7 @@ const page = {
           <li class="cert reveal">
             <figure>
               <div class="cert__img">
-                <div class="img-slot ratio-3x4" role="img" aria-label="온라인마케팅 우수상">
-              <p class="img-slot__text"><strong>CERT-02 · 3:4 · 600×800</strong>온라인마케팅 우수상 사진 (스캔 또는 촬영)</p>
-            </div>
+                <img class="img-cover ratio-3x4" src="/assets/img/about/cert-02.webp" alt="온라인마케팅 우수상" width="600" height="800" loading="lazy">
               </div>
               <figcaption>
                 <h3 class="cert__name">온라인마케팅 우수상</h3>
@@ -163,9 +152,7 @@ const page = {
           <li class="cert reveal">
             <figure>
               <div class="cert__img">
-                <div class="img-slot ratio-3x4" role="img" aria-label="상권분석 수료증">
-              <p class="img-slot__text"><strong>CERT-03 · 3:4 · 600×800</strong>상권분석 수료증 사진 (스캔 또는 촬영)</p>
-            </div>
+                <img class="img-cover ratio-3x4" src="/assets/img/about/cert-03.webp" alt="상권분석 수료증" width="600" height="800" loading="lazy">
               </div>
               <figcaption>
                 <h3 class="cert__name">상권분석 수료증</h3>
@@ -175,9 +162,7 @@ const page = {
           <li class="cert reveal">
             <figure>
               <div class="cert__img">
-                <div class="img-slot ratio-3x4" role="img" aria-label="GTQ 그래픽기술자격 1급">
-              <p class="img-slot__text"><strong>CERT-04 · 3:4 · 600×800</strong>GTQ 그래픽기술자격 1급 사진 (스캔 또는 촬영)</p>
-            </div>
+                <img class="img-cover ratio-3x4" src="/assets/img/about/cert-04.webp" alt="GTQ 그래픽기술자격 1급 자격취득 내역서" width="600" height="800" loading="lazy">
               </div>
               <figcaption>
                 <h3 class="cert__name">GTQ 그래픽기술자격 1급</h3><p class="cert__by">한국생산성본부(KPC)</p>
@@ -187,9 +172,7 @@ const page = {
           <li class="cert reveal">
             <figure>
               <div class="cert__img">
-                <div class="img-slot ratio-3x4" role="img" aria-label="SNS광고마케터 1급">
-              <p class="img-slot__text"><strong>CERT-05 · 3:4 · 600×800</strong>SNS광고마케터 1급 사진 (스캔 또는 촬영)</p>
-            </div>
+                <img class="img-cover ratio-3x4" src="/assets/img/about/cert-05.webp" alt="SNS광고마케터 1급 보유 자격 안내" width="600" height="800" loading="lazy">
               </div>
               <figcaption>
                 <h3 class="cert__name">SNS광고마케터 1급</h3><p class="cert__by">한국정보통신진흥협회(KAIT)</p>
@@ -199,9 +182,7 @@ const page = {
           <li class="cert reveal">
             <figure>
               <div class="cert__img">
-                <div class="img-slot ratio-3x4" role="img" aria-label="AI 자격증">
-              <p class="img-slot__text"><strong>CERT-06 · 3:4 · 600×800</strong>AI 자격증 사진 (스캔 또는 촬영)</p>
-            </div>
+                <img class="img-cover ratio-3x4" src="/assets/img/about/cert-06.webp" alt="AI 자격증 보유 자격 안내" width="600" height="800" loading="lazy">
               </div>
               <figcaption>
                 <h3 class="cert__name">AI 자격증</h3><p class="cert__by">한국인공지능교육연구협회</p>
@@ -237,9 +218,7 @@ const page = {
           <div class="office__map">
             <iframe title="제주마케팅파트너스 사무실 위치 지도" src="https://www.google.com/maps?q=%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EC%97%B0%EB%B6%81%EB%A1%9C%20161&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          <div class="img-slot ratio-4x3" role="img" aria-label="제주마케팅파트너스 사무실">
-              <p class="img-slot__text"><strong>ABOUT-OFFICE · 4:3 · 1200×900</strong>사무실 내부 또는 상담 테이블</p>
-            </div>
+          <img class="img-cover ratio-4x3" src="/assets/img/about/about-office.webp" alt="제주마케팅파트너스 사무실" width="1200" height="900" loading="lazy">
         </div>
       </div>
     </section>

@@ -192,6 +192,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .site-header.is-scrolled { box-shadow: 0 1px 0 var(--c-line); }
 .site-header__inner { height: 100%; display: flex; align-items: center; gap: var(--sp-4); }
 .logo { display: flex; flex-direction: column; line-height: 1.1; color: var(--c-ink); }
+.logo__image { display: block; width: clamp(168px, 16vw, 240px); height: auto; }
 .logo__ko { font-size: 1.1875rem; font-weight: 800; letter-spacing: -0.04em; }
 .logo__en { margin-top: 4px; font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.22em; color: var(--c-faint); }
 .gnb { margin-inline: auto; display: none; }

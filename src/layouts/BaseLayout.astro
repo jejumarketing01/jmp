@@ -28,7 +28,7 @@ const {
   bodyClass,
   pageStylesheet,
   ogType = 'website',
-  ogImage = '/assets/img/og-image.jpg',
+  ogImage = '/assets/img/common/og-image.jpg',
   activePage,
   showContactCta = false,
 } = Astro.props;
@@ -41,15 +41,17 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
   <meta name="description" content={description}>
-  <!-- TODO: 실제 도메인 확인 후 수정 -->
+  <!-- TODO: Cloudflare Pages에 jejumarketing.co.kr 연결 후 DNS·SSL 확인 -->
   <link rel="canonical" href={canonical}>
   <meta property="og:type" content={ogType}>
   <meta property="og:site_name" content="제주마케팅파트너스">
   <meta property="og:title" content={ogTitle}>
   <meta property="og:description" content={ogDescription}>
-  <!-- TODO: OG 이미지 1200×630 준비 후 경로 수정 -->
   <meta property="og:image" content={ogImage}>
   <meta name="theme-color" content="#f23902">
+  <link rel="icon" href="/assets/img/common/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/common/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/common/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">

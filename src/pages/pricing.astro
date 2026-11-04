@@ -15,6 +15,9 @@ const page = {
 ---
 
 <BaseLayout {...page}>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/assets/img/pricing/price-hero.webp" type="image/webp" fetchpriority="high">
+  </Fragment>
 
     <!-- ================= 1. 인트로 ================= -->
     <section class="page-intro" aria-labelledby="page-title">
@@ -35,9 +38,7 @@ const page = {
           </nav>
         </div>
         <div class="page-intro__visual">
-          <div class="img-slot ratio-16x10" role="img" aria-label="상담 테이블에서 사장님께 가격을 설명하는 모습">
-            <p class="img-slot__text"><strong>PRICE-HERO · 16:10 · 1600×1000</strong>가게 테이블에서 대표가 사장님께 종이나 태블릿으로 가격을 짚어 설명하는 모습</p>
-          </div>
+          <img class="img-cover ratio-16x10" src="/assets/img/pricing/price-hero.webp" alt="상담 테이블에서 사장님께 가격을 설명하는 모습" width="1600" height="1000" fetchpriority="high">
         </div>
       </div>
     </section>

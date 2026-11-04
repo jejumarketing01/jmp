@@ -50,6 +50,9 @@ main { overflow-x: clip; }
 }
 .shorts__list::-webkit-scrollbar { display: none; }
 .shorts__list > li { scroll-snap-align: start; }
+.shorts__link { display: block; color: inherit; }
+.shorts__link .img-cover { transition: transform .5s var(--ease); }
+.shorts__link:hover .img-cover { transform: scale(1.02); }
 .shorts__item figcaption { margin-top: var(--sp-2); font-size: var(--fs-small); color: var(--c-muted); }
 .shorts__item figcaption strong { color: var(--c-ink); }
 .shorts__list > li:nth-child(2) .img-slot { background-color: #f6ddd0; }
@@ -62,7 +65,7 @@ main { overflow-x: clip; }
 }
 
 /* 02 광고 ------------------------------------------------ */
-@media (min-width: 960px) { .svc__media .img-slot { box-shadow: -24px 24px 0 var(--c-peach); } }
+@media (min-width: 960px) { .svc__media .img-slot, .svc__media .img-cover { box-shadow: -24px 24px 0 var(--c-peach); } }
 .ad-cards { display: grid; gap: var(--sp-3); margin-top: clamp(3rem, 6vw, 5rem); }
 .ad-card { padding: var(--sp-4); background: var(--c-bg-soft); border-top: 3px solid var(--c-point); }
 .ad-card .h3 { margin-bottom: var(--sp-2); }
