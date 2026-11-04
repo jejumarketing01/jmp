@@ -124,10 +124,10 @@
 | CERT-03 | public/assets/img/about/cert-03.webp | 〃 | 600×800 | 3:4 | 적용 완료 · 상권분석 수료증 | 상권분석 수료증 |
 | CERT-04 | public/assets/img/about/cert-04.webp | 〃 | 600×800 | 3:4 | 적용 완료 · 자격취득 내역서, 개인정보 흐림 처리 | GTQ 그래픽기술자격 1급 자격취득 내역서 |
 | CERT-05 | public/assets/img/about/cert-05.webp | 〃 | 600×800 | 3:4 | 적용 완료 · SNS광고마케터 1급 보유 자격 카드 | SNS광고마케터 1급 보유 자격 안내 |
-| CERT-06 | public/assets/img/about/cert-06.webp | 〃 | 600×800 | 3:4 | 적용 완료 · AI 자격증 보유 자격 카드 | AI 자격증 보유 자격 안내 |
+| CERT-06 | public/assets/img/about/cert-06.webp | 〃 | 600×800 | 3:4 | 적용 완료 · ai자격증.png 원본, 문서 전체 보존 | Odyssey AI Challenge 수료증 |
 | ABOUT-OFFICE | public/assets/img/about/about-office.webp | 오시는 길 | 1200×900 | 4:3 | 적용 완료 · 사무실 내부 | 제주마케팅파트너스 사무실 |
 
-자격증 사진은 문서 부분만 잘라 3:4로 맞췄다. 자격취득 내역서의 개인정보 영역은 흐림 처리했다. CERT-05·06은 원본 이미지 대신 보유 자격 카드이며, 원본이 준비되면 교체한다. 지도는 구글 지도 `<iframe>`을 사용한다.
+자격증 사진은 문서 전체를 보존해 3:4로 맞췄다. 자격취득 내역서의 개인정보 영역은 흐림 처리했다. CERT-05는 원본 이미지 대신 보유 자격 카드이며, 원본이 준비되면 교체한다. 지도는 구글 지도 `<iframe>`을 사용한다.
 
 합계 갱신: 공통 5개 + 사진 53장 (메인 15 · 서비스 6 · 가격 1 · 성공사례 20 · 소개 11).
 
