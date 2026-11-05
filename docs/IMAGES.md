@@ -84,12 +84,12 @@
 
 | ID | 파일 경로 | 위치 | 크기 (px) | 비율 | 넣을 이미지 (드라이브 원본) | alt |
 |---|---|---|---|---|---|---|
-| GALLERY-01 | public/assets/img/cases/gallery-01.webp | 함께한 제주 가게 줄 | 900×1200 | 3:4 | 적용 완료 | 함께한 제주 가게 외관 |
-| GALLERY-02 | public/assets/img/cases/gallery-02.webp | 〃 | 900×1200 | 3:4 | 적용 완료 | 함께한 제주 가게 외관 |
-| GALLERY-03 | public/assets/img/cases/gallery-03.webp | 〃 | 900×1200 | 3:4 | 적용 완료 | 함께한 제주 가게 외관 |
-| GALLERY-04 | public/assets/img/cases/gallery-04.webp | 〃 | 900×1200 | 3:4 | 적용 완료 | 함께한 제주 가게 외관 |
-| GALLERY-05 | public/assets/img/cases/gallery-05.webp | 〃 | 900×1200 | 3:4 | 적용 완료 | 함께한 제주 가게 외관 |
-| GALLERY-06 | public/assets/img/cases/gallery-06.webp | 〃 | 900×1200 | 3:4 | 적용 완료 · 피플제주_외관.jpg | 피플제주 외관 |
+| GALLERY-01 | public/assets/img/cases/gallery-01.webp | 함께한 제주 가게 줄 | 900×1200 | 3:4 | 적용 완료 · 다정이네김밥_외관.jpeg | 다정이네김밥 외관 |
+| GALLERY-02 | public/assets/img/cases/gallery-02.webp | 〃 | 900×1200 | 3:4 | 적용 완료 · 소플러스제주점_외관.jpg | 소플러스 제주점 외관 |
+| GALLERY-03 | public/assets/img/cases/gallery-03.webp | 〃 | 900×1200 | 3:4 | 적용 완료 · 운정이네_외관간판.jpeg · 간판 중심 크롭 | 운정이네 외관 간판 |
+| GALLERY-04 | public/assets/img/cases/gallery-04.webp | 〃 | 900×1200 | 3:4 | 적용 완료 · 장모식탁_외관.jpg · 간판 중심 크롭 | 장모식탁 외관 |
+| GALLERY-05 | public/assets/img/cases/gallery-05.webp | 〃 | 900×1200 | 3:4 | 적용 완료 · 충민정_외관.jpeg · 간판·입구 중심 크롭 | 충민정 외관 |
+| GALLERY-06 | public/assets/img/cases/gallery-06.webp | 〃 | 900×1200 | 3:4 | 적용 완료 · 피플제주_외관.jpg · 간판·입구 중심 크롭 | 피플제주 외관 |
 | GALLERY-07 | public/assets/img/cases/gallery-07.webp | 〃 | 900×1200 | 3:4 | 적용 완료 · 안녕전복_외관측면.jpeg | 안녕전복 외관 |
 | GALLERY-08 | public/assets/img/cases/gallery-08.webp | 〃 | 900×1200 | 3:4 | 적용 완료 · 운정이네_외관.jpeg | 운정이네 외관 |
 | CASE-01 | public/assets/img/cases/case-01.webp | 사례 1 | 1200×900 | 4:3 | 소플러스공항점_외관.jpg | 소플러스 제주노형공항점 외관 |
