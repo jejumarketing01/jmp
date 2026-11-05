@@ -45,7 +45,7 @@
 |---|---|---|---|---|---|---|
 | HERO-1 ★ | public/assets/img/home/hero-1.webp | 메인 배너 1 (가장 먼저 로딩) | 1600×1000 | 16:10 | 적용 완료 · 상담/설명 현장 | 대표가 가게에서 사장님과 이야기하는 모습 |
 | HERO-2 | public/assets/img/home/hero-2.webp | 메인 배너 2 | 1600×1000 | 16:10 | 적용 완료 · 촬영 장비가 있는 현장 | 가게에서 홍보 영상을 촬영하는 모습 |
-| HERO-3 | public/assets/img/home/hero-3.webp | 메인 배너 3 | 1600×1000 | 16:10 | 적용 완료 · 가게 입구 대체 사진 | 손님이 가게 앞에서 기다리는 모습 |
+| HERO-3 | public/assets/img/home/hero-3.webp | 메인 배너 3 | 1600×1000 | 16:10 | 적용 완료 · `작업사진.png` 원본, 음식점 콘텐츠를 검토하는 팀 회의 | 음식점 콘텐츠를 함께 검토하는 모습 |
 | SERVICE-VIDEO | public/assets/img/home/service-video.webp | 주요 서비스 · 영상 | 1200×900 | 4:3 | 적용 완료 · 음식 촬영 현장 | 음식을 촬영하는 장면 |
 | SERVICE-ADS | public/assets/img/home/service-ads.webp | 주요 서비스 · 광고 | 1200×900 | 4:3 | 적용 완료 · 화면을 함께 보는 설명 현장 | 광고 결과 화면을 사장님께 설명하는 모습 |
 | SERVICE-CONSULT | public/assets/img/home/service-consult.webp | 주요 서비스 · 컨설팅 | 1200×900 | 4:3 | 적용 완료 · 상담 테이블 대체 사진 | 가게 운영 방향을 상담하는 모습 |
@@ -66,13 +66,13 @@
 | ID | 파일 경로 | 위치 | 크기 (px) | 비율 | 넣을 이미지 | alt |
 |---|---|---|---|---|---|---|
 | SVC-HERO ★ | public/assets/img/services/svc-hero.webp | 인트로 (첫 화면) | 1600×1000 | 16:10 | 적용 완료 · 촬영 장비가 있는 현장 | 가게에서 사장님을 촬영하는 모습 |
-| SVC-SHORT-1 | public/assets/img/services/svc-short-1.webp | 01 영상 · 예시 영상 1 | 720×1280 | 9:16 | 적용 완료 · 소플러스 외관 대체 이미지 | 소플러스 메뉴 소개 영상 대체 이미지 |
-| SVC-SHORT-2 | public/assets/img/services/svc-short-2.webp | 01 영상 · 예시 영상 2 | 720×1280 | 9:16 | 적용 완료 · 중문우동한그릇 외관 대체 이미지 | 중문우동한그릇 녹차면 소개 영상 대체 이미지 |
-| SVC-SHORT-3 | public/assets/img/services/svc-short-3.webp | 01 영상 · 예시 영상 3 | 720×1280 | 9:16 | 적용 완료 · 안녕전복 외관 대체 이미지 | 안녕전복 세트메뉴 소개 영상 대체 이미지 |
+| SVC-SHORT-1 | public/assets/img/services/svc-short-1.webp | 01 영상 · 예시 영상 1 | 720×1280 | 9:16 | 적용 완료 · 장모식탁_외관.jpg · 간판 중심 9:16 크롭 | 장모식탁 외관 |
+| SVC-SHORT-2 | public/assets/img/services/svc-short-2.webp | 01 영상 · 예시 영상 2 | 720×1280 | 9:16 | 적용 완료 · 충민정_외관.jpeg · 간판·입구 중심 9:16 크롭 | 충민정 외관 |
+| SVC-SHORT-3 | public/assets/img/services/svc-short-3.webp | 01 영상 · 예시 영상 3 | 720×1280 | 9:16 | 적용 완료 · 다정이네김밥_외관.jpeg · 건물 중심 9:16 크롭 | 다정이네김밥 외관 |
 | SVC-ADS | public/assets/img/home/service-ads.webp (공유) | 02 광고 | 1200×900 | 4:3 | 적용 완료 · 메인 SERVICE-ADS와 공유 | 광고 결과 화면을 사장님께 설명하는 모습 |
-| SVC-WIDE | public/assets/img/services/svc-wide.webp | 광고와 컨설팅 사이 | 2400×1030 | 21:9 (모바일 4:3) | 적용 완료 · 가게 외관 대체 사진 | 가게 간판과 입구를 살펴볼 수 있는 외관 |
+| SVC-WIDE | public/assets/img/services/svc-wide.webp | 광고와 컨설팅 사이 | 2400×1030 | 21:9 (모바일 4:3) | 적용 완료 · `작업사진1.jpeg` 원본, 책장·테이블·창가 중심 21:9 크롭 | 책장과 테이블이 있는 밝은 공간 |
 
-예시 영상 3개는 사진을 누르면 각각의 유튜브 영상으로 이동한다.
+예시 영상 3개는 사진을 누르면 각각의 인스타그램 게시물로 이동한다.
 
 ## 가격 (`src/pages/pricing.astro`) — 1장
 
@@ -116,9 +116,9 @@
 | ID | 파일 경로 | 위치 | 크기 (px) | 비율 | 넣을 이미지 | alt |
 |---|---|---|---|---|---|---|
 | ABOUT-CEO ★ | public/assets/img/about/about-ceo.webp | 인트로 (첫 화면) | 900×1200 | 3:4 | 적용 완료 · 대표 프로필 사진 | 대표 한승지 |
-| ABOUT-LECTURE-WIDE | public/assets/img/about/about-lecture-wide.webp | 숫자와 강의 사이 넓은 사진 | 2400×1030 | 21:9 (모바일 4:3) | 적용 완료 · 강의 현장 | 사장님들께 마케팅 강의를 하는 모습 |
-| ABOUT-LECTURE-1 | public/assets/img/about/about-lecture-1.webp | 강의 | 1200×900 | 4:3 | 적용 완료 · 강의 자료 화면과 대표 | 강의하는 대표 한승지 |
-| ABOUT-LECTURE-2 | public/assets/img/about/about-lecture-2.webp | 강의 | 1200×900 | 4:3 | 적용 완료 · 강의를 듣는 사장님들 | 강의를 듣는 사장님들 |
+| ABOUT-LECTURE-WIDE | public/assets/img/about/about-lecture-wide.webp | 숫자와 강의 사이 넓은 사진 | 2400×1030 | 21:9 (모바일 4:3) | 적용 완료 · `강연_1.jpeg` 원본, 강사·수강생 중심 21:9 크롭 | 촬영 장비를 놓고 영상 제작 강의를 진행하는 모습 |
+| ABOUT-LECTURE-1 | public/assets/img/about/about-lecture-1.webp | 강의 | 1200×900 | 4:3 | 적용 완료 · `강의사진.png` 원본, AI 강의 | AI 활용 강의를 진행하는 대표 한승지 |
+| ABOUT-LECTURE-2 | public/assets/img/about/about-lecture-2.webp | 강의 | 1200×900 | 4:3 | 적용 완료 · `강의하는모습_5.jpeg` 원본, 강의 참석자 | 강의 내용을 적으며 듣는 사장님들 |
 | CERT-01 | public/assets/img/about/cert-01.webp | 자격증·수상 | 600×800 | 3:4 | 적용 완료 · 마케팅 전문강사 임명장 | 마케팅 전문강사 임명장 |
 | CERT-02 | public/assets/img/about/cert-02.webp | 〃 | 600×800 | 3:4 | 적용 완료 · 온라인마케팅 우수상 | 온라인마케팅 우수상 |
 | CERT-03 | public/assets/img/about/cert-03.webp | 〃 | 600×800 | 3:4 | 적용 완료 · 상권분석 수료증 | 상권분석 수료증 |
