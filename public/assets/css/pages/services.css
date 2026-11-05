@@ -37,7 +37,7 @@ main { overflow-x: clip; }
 @media (min-width: 640px) { .feature-grid { grid-template-columns: 1fr 1fr; } }
 
 /* 01 영상: 출연 안내 */
-.notice { align-self: start; padding: var(--sp-4) var(--sp-4) var(--sp-4) calc(var(--sp-4) + 4px); background: #fff; border-left: 3px solid var(--c-point); }
+.notice { align-self: start; padding: var(--sp-4); background: #fff; }
 .notice .h3 { margin-bottom: var(--sp-2); }
 .notice p { color: var(--c-muted); }
 
@@ -95,9 +95,8 @@ main { overflow-x: clip; }
 .steps { counter-reset: step; display: grid; gap: 0; }
 .steps > li {
   counter-increment: step; position: relative;
-  padding: 0 0 var(--sp-4) calc(var(--sp-4) + 8px); border-left: 1px solid #d9d9d9; margin-left: 6px;
+  padding: 0 0 var(--sp-4) calc(var(--sp-4) + 8px); margin-left: 6px;
 }
-.steps > li:last-child { border-left-color: transparent; }
 .steps > li::before {                         /* 주황 점 */
   content: ""; position: absolute; left: -7px; top: 0.2rem; width: 13px; height: 13px; border-radius: 50%;
   background: var(--c-bg-soft); border: 2px solid var(--c-point);
@@ -108,7 +107,7 @@ main { overflow-x: clip; }
 .steps p { margin-top: 0.5rem; font-size: var(--fs-small); color: var(--c-muted); line-height: 1.65; }
 @media (min-width: 960px) {
   .steps { grid-template-columns: repeat(6, 1fr); gap: var(--sp-3); }
-  .steps > li { padding: var(--sp-4) 0 0; margin-left: 0; border-left: 0; border-top: 1px solid #d9d9d9; }
+  .steps > li { padding: var(--sp-4) 0 0; margin-left: 0; border-top: 1px solid #d9d9d9; }
   .steps > li::before { left: 0; top: -7px; }
 }
 

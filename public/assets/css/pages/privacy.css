@@ -15,7 +15,7 @@
 
 @media (min-width: 960px) {
   .privacy-intro__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: end; column-gap: var(--sp-6); }
-  .privacy-intro__lead { padding-bottom: var(--sp-1); padding-left: var(--sp-4); border-left: 1px solid var(--c-line); }
+  .privacy-intro__lead { padding-bottom: var(--sp-1); padding-left: var(--sp-4); }
   .privacy__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--sp-6); }
   .privacy__head { position: sticky; top: calc(var(--header-h) + var(--sp-3)); align-self: start; }
 }

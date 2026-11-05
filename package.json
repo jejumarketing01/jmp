@@ -9,9 +9,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
-    "astro": "^7.4.4"
+    "astro": "^7.4.4",
+    "wrangler": "^4.157.0"
   }
 }

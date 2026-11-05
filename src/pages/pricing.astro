@@ -16,7 +16,7 @@ const page = {
 
 <BaseLayout {...page}>
   <Fragment slot="head">
-    <link rel="preload" as="image" href="/assets/img/pricing/price-hero.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/img/pricing/price-hero.webp" imagesrcset="/assets/img/pricing/price-hero-mobile.webp 800w, /assets/img/pricing/price-hero.webp 1600w" imagesizes="(max-width: 959px) calc(100vw - 40px), 50vw" type="image/webp" fetchpriority="high">
   </Fragment>
 
     <!-- ================= 1. 인트로 ================= -->
@@ -38,7 +38,7 @@ const page = {
           </nav>
         </div>
         <div class="page-intro__visual">
-          <img class="img-cover ratio-16x10" src="/assets/img/pricing/price-hero.webp" alt="상담 테이블에서 사장님께 가격을 설명하는 모습" width="1600" height="1000" fetchpriority="high">
+          <img class="img-cover ratio-16x10" src="/assets/img/pricing/price-hero.webp" srcset="/assets/img/pricing/price-hero-mobile.webp 800w, /assets/img/pricing/price-hero.webp 1600w" sizes="(max-width: 959px) calc(100vw - 40px), 50vw" alt="상담 테이블에서 사장님께 가격을 설명하는 모습" width="1600" height="1000" fetchpriority="high">
         </div>
       </div>
     </section>

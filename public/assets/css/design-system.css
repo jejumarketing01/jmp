@@ -247,8 +247,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (min-width: 1024px) { .menu-panel__nav { display: none; } }
 
 /* 8. 공통 섹션 블록 -------------------------------------- */
-/* 8-1 주황 세로선 카드 (레퍼런스의 3단 카드) */
-.line-card { position: relative; padding: 0.25rem 0 0.25rem var(--sp-3); border-left: 1px solid var(--c-point); }
+/* 8-1 텍스트 카드 */
+.line-card { position: relative; padding: 0.25rem 0 0.25rem var(--sp-3); }
 .line-card .h3 { margin-bottom: var(--sp-2); }
 .line-card p { color: var(--c-muted); font-size: var(--fs-small); line-height: 1.75; }
 .line-card .link-arrow { margin-top: var(--sp-3); }
@@ -285,11 +285,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* 8-7 서브 페이지 인트로 (메인 배너를 한 장으로 줄인 형태) */
 .page-intro { position: relative; padding-block: clamp(3rem, 7vw, 6.5rem) clamp(3.5rem, 7vw, 6rem); }
-.page-intro::before, .page-intro::after {          /* 메인과 같은 얇은 세로 기준선 */
-  content: ""; position: absolute; top: 0; bottom: 0; width: 1px; background: #f0f0f0; z-index: -1;
-}
-.page-intro::before { left: 21%; }
-.page-intro::after { left: 69%; }
 .page-intro__inner { display: grid; gap: var(--sp-5); }
 .page-intro__kicker {
   display: flex; align-items: center; gap: 0.75rem; margin-bottom: var(--sp-3);
@@ -337,8 +332,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .split__head { position: sticky; top: calc(var(--header-h) + 2rem); }
 }
 
-/* 8-11 안내 상자 (왼쪽 주황 선) */
-.notice-box { padding: var(--sp-4) var(--sp-4) var(--sp-4) calc(var(--sp-4) + 4px); background: #fff; border-left: 3px solid var(--c-point); }
+/* 8-11 안내 상자 */
+.notice-box { padding: var(--sp-4); background: #fff; }
 .section--soft .notice-box, .section--peach .notice-box { background: #fff; }
 .section:not(.section--soft):not(.section--peach) .notice-box { background: var(--c-bg-soft); }
 .notice-box .h3 { margin-bottom: var(--sp-2); }
@@ -362,7 +357,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (min-width: 960px) {
   .contact__inner { grid-template-columns: 1fr 1fr; gap: 0; }
   .contact__head { padding-right: var(--sp-6); }
-  .contact__body { padding-left: var(--sp-6); border-left: 1px solid var(--c-line); }
+  .contact__body { padding-left: var(--sp-6); }
 }
 
 /* 9. 푸터 ------------------------------------------------ */

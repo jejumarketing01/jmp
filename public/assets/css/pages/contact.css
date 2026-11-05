@@ -79,7 +79,7 @@ main { overflow-x: clip; }
 .consult-form__submit .btn-note { margin: 0; }
 .consult-form button[disabled] { opacity: .6; cursor: progress; }
 .form-status:empty { display: none; }
-.form-status { padding: 1rem 1.25rem; font-weight: 600; color: var(--c-ink); background: var(--c-peach); border-left: 3px solid var(--c-point); }
+.form-status { padding: 1rem 1.25rem; font-weight: 600; color: var(--c-ink); background: var(--c-peach); }
 .form-status.is-error { background: #fff4f0; }
 
 /* 3. 문의하신 뒤에는 -------------------------------------- */

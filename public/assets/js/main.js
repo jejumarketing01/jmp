@@ -83,8 +83,21 @@
     let timer = null;
     let paused = reduceMotion; // 움직임 줄이기 설정이면 자동 넘김 안 함
 
-    const go = (n) => {
-      index = (n + slides.length) % slides.length;
+    const loadVisual = async (target) => {
+      const image = visuals[target]?.querySelector('img[data-src]');
+      if (!image) return;
+      if (image.dataset.srcset) {
+        image.srcset = image.dataset.srcset;
+        image.removeAttribute('data-srcset');
+      }
+      image.src = image.dataset.src;
+      image.removeAttribute('data-src');
+      try { await image.decode(); } catch { /* 실패하면 브라우저의 기본 대체 표시를 사용 */ }
+    };
+    const go = async (n) => {
+      const target = (n + slides.length) % slides.length;
+      await loadVisual(target);
+      index = target;
       slides.forEach((s, i) => {
         const on = i === index;
         s.classList.toggle('is-active', on);
@@ -97,11 +110,14 @@
       });
       if (current) current.textContent = String(index + 1).padStart(2, '0');
     };
-    const stop = () => { clearInterval(timer); timer = null; };
-    const start = () => { stop(); if (!paused) timer = setInterval(() => go(index + 1), DELAY); };
+    const stop = () => { clearTimeout(timer); timer = null; };
+    const start = () => {
+      stop();
+      if (!paused) timer = setTimeout(async () => { await go(index + 1); start(); }, DELAY);
+    };
 
-    hero.querySelector('[data-hero-prev]')?.addEventListener('click', () => { go(index - 1); start(); });
-    hero.querySelector('[data-hero-next]')?.addEventListener('click', () => { go(index + 1); start(); });
+    hero.querySelector('[data-hero-prev]')?.addEventListener('click', async () => { stop(); await go(index - 1); start(); });
+    hero.querySelector('[data-hero-next]')?.addEventListener('click', async () => { stop(); await go(index + 1); start(); });
     pauseBtn?.addEventListener('click', () => {
       paused = !paused;
       pauseBtn.setAttribute('aria-pressed', String(paused));
@@ -122,11 +138,11 @@
     hero.addEventListener('touchend', (e) => {
       if (startX === null) return;
       const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 50) { go(index + (dx < 0 ? 1 : -1)); start(); }
+      if (Math.abs(dx) > 50) { stop(); void go(index + (dx < 0 ? 1 : -1)).then(start); }
       startX = null;
     });
 
-    go(0);
+    void go(0);
     start();
   }
 

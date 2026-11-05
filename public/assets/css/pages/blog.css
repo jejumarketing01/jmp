@@ -11,7 +11,7 @@ main { overflow-x: clip; }
 @media (min-width: 960px) {
   .blog-intro__inner { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); align-items: end; column-gap: clamp(2.5rem, 5vw, 5.5rem); }
   .blog-intro__inner > :first-child { padding-left: clamp(0px, 2vw, 32px); }
-  .blog-intro__lead { padding-bottom: 0.75rem; border-left: 1px solid var(--c-line); padding-left: var(--sp-4); }
+  .blog-intro__lead { padding-bottom: 0.75rem; padding-left: var(--sp-4); }
 }
 
 /* ---------- 목록: 최신 글 ---------- */
@@ -81,7 +81,7 @@ main { overflow-x: clip; }
 .prose ol li::marker { color: var(--c-point-text); font-weight: 700; }
 .prose figure { margin-block: 2.25em; }
 .prose figcaption { margin-top: 0.75rem; font-size: var(--fs-small); color: var(--c-muted); }
-.prose blockquote { margin-block: 2em; padding-left: var(--sp-3); border-left: 3px solid var(--c-point); }
+.prose blockquote { margin-block: 2em; padding-left: var(--sp-3); }
 .prose blockquote p { font-size: 1.375rem; font-weight: 600; color: var(--c-ink); line-height: 1.6; }
 .prose table { width: 100%; border-collapse: collapse; font-size: 1rem; border-top: 1px solid var(--c-ink); }
 .prose caption { text-align: left; padding-bottom: 0.75rem; font-weight: 700; color: var(--c-ink); }

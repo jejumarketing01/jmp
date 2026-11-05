@@ -16,7 +16,7 @@ const page = {
 
 <BaseLayout {...page}>
   <Fragment slot="head">
-<link rel="preload" as="image" href="/assets/img/about/about-ceo.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/img/about/about-ceo.webp" imagesrcset="/assets/img/about/about-ceo-mobile.webp 600w, /assets/img/about/about-ceo.webp 900w" imagesizes="(max-width: 959px) calc(100vw - 40px), 36vw" type="image/webp" fetchpriority="high">
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,7 +44,7 @@ const page = {
           <p class="lead page-intro__lead">제주에서 가게 사장님들의 홍보를 돕고 있습니다.</p>
         </div>
         <div class="page-intro__visual about-intro__visual">
-          <img class="img-cover ratio-3x4" src="/assets/img/about/about-ceo.webp" alt="대표 한승지" width="900" height="1200" fetchpriority="high">
+          <img class="img-cover ratio-3x4" src="/assets/img/about/about-ceo.webp" srcset="/assets/img/about/about-ceo-mobile.webp 600w, /assets/img/about/about-ceo.webp 900w" sizes="(max-width: 959px) calc(100vw - 40px), 36vw" alt="대표 한승지" width="900" height="1200" fetchpriority="high">
         </div>
       </div>
     </section>
@@ -84,7 +84,7 @@ const page = {
     </section>
 
     <div class="wide-photo">
-      <img class="img-cover ratio-21x9" src="/assets/img/about/about-lecture-wide.webp?v=20261105-crop" alt="촬영 장비를 놓고 영상 제작 강의를 진행하는 모습" width="2400" height="1030" loading="lazy">
+      <img class="img-cover ratio-21x9" src="/assets/img/about/about-lecture-wide.webp?v=20261105-crop" srcset="/assets/img/about/about-lecture-wide-mobile.webp 800w, /assets/img/about/about-lecture-wide.webp?v=20261105-crop 2400w" sizes="100vw" alt="촬영 장비를 놓고 영상 제작 강의를 진행하는 모습" width="2400" height="1030" loading="lazy">
     </div>
 
     <!-- ================= 4. 강의 ================= -->

@@ -48,7 +48,7 @@
 | 보조 버튼 | `.btn.btn--ghost` | "상담 신청하기" |
 | 버튼 묶음 | `.btn-group` + `.btn-note` | 버튼 + 아래 안내문 |
 | 글자 링크 | `.link-arrow` | "~ 보기" 형태의 이동 링크 |
-| 세로선 카드 | `.line-card` | 왼쪽 주황 세로선 + 제목 + 본문 + 링크 |
+| 텍스트 카드 | `.line-card` | 제목 + 본문 + 링크 |
 | 번호 목록 | `ol.num-list` | 01·02·03 번호가 붙는 항목 |
 | 숫자 | `.stat` > `.stat__num` + `.stat__label` | 큰 숫자, 단위는 `<em>` |
 | 문의 띠 | `.section--peach.cta-band` | 주황 제목 + 버튼 한 줄 |
@@ -57,11 +57,11 @@
 | 메뉴 패널 | `dialog#menu-panel` | 오른쪽에서 열리는 메뉴·연락처 |
 | 플로팅 | `.floating` > `.fab--kakao`, `.fab--top` | 카카오톡, 맨 위로 |
 | 등장 효과 | `.reveal` | 스크롤하면 아래에서 올라오며 나타남 |
-| 서브 페이지 인트로 | `section.page-intro` > `.page-intro__copy` + `.page-intro__visual` | 메인 배너를 한 장으로 줄인 형태. 세로 기준선·주황 원 포함. H1은 `.display` |
+| 서브 페이지 인트로 | `section.page-intro` > `.page-intro__copy` + `.page-intro__visual` | 메인 배너를 한 장으로 줄인 형태. 사진 뒤에 주황 원을 배치. H1은 `.display` |
 | 페이지 안 바로가기 | `ul.jump-links` (`nav` 안) | 번호 + 이름 + ↓ 목록. 같은 페이지 섹션으로 이동 |
 | 넓은 사진 | `.wide-photo` | 섹션 사이 화면 끝까지. PC 21:9, 모바일 4:3 |
 | 2단 블록 | `.split` > `header.split__head`(라벨·H2·`.split__lead`) + 내용 | 서브 페이지 본문 기본형. 왼쪽 제목이 PC에서 따라옴. 라벨은 `.split__label`(번호 + 영문, `aria-hidden`) |
-| 안내 상자 | `aside.notice-box` | 왼쪽 주황 선 상자. 배경은 섹션에 맞춰 자동(흰/회색) |
+| 안내 상자 | `aside.notice-box` | 흰 배경의 안내 상자 |
 | 정의 표 | `dl.def-list` > `div` > `dt`+`dd` | 항목 / 내용 줄. 계약 조건 같은 목록 |
 | 하단 문의 | `section.contact` | `BaseLayout`의 `showContactCta`로 표시. 마크업은 `src/components/ContactCta.astro`에서 관리 |
 
@@ -90,7 +90,7 @@
 5. 넓은 사진 → 흰 바탕 2단 (제목 / 번호 목록)
 6. 카드 가로 줄 — 회색 바탕
 7. 안심 조건 — 살구색
-8. 하단 문의 — 흰 바탕, 가운데 세로선으로 나눈 2단
+8. 하단 문의 — 흰 바탕의 2단 구성
 
 ## 서브 페이지 구성 패턴 (`src/pages/services.astro` 기준)
 
