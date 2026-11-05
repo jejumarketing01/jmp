@@ -34,14 +34,15 @@
   --fs-display: clamp(2.25rem, 1.5rem + 3vw, 3.75rem); /* 메인 배너 H1 */
   --fs-h2: clamp(1.875rem, 1.4rem + 1.9vw, 2.875rem);   /* 섹션 제목 */
   --fs-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);      /* 카드 제목 */
-  --fs-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);  /* 제목 아래 보조 문장 */
+  --fs-lead: clamp(1.0625rem, 0.98rem + 0.24vw, 1.1875rem); /* 제목 아래 보조 문장 */
   --fs-body: 1.0625rem;  /* 17px. 사장님이 읽기 편한 크기 */
   --fs-small: 0.9375rem; /* 15px */
+  --fs-note: 0.8125rem;  /* 13px. 짧은 보조 안내 */
   --fs-label: 0.75rem;   /* 12px. 영문 장식 라벨 */
 
-  --lh-tight: 1.4;       /* 제목 줄 간격 */
+  --lh-title: 1.3;
   --lh-body: 1.7;
-  --ls-tight: 0;         /* 제목 자간 (차움 방식: 좁히지 않음) */
+  --ls-title: -0.2px;
   --ls-label: 0.24em;    /* 라벨 자간 */
 
   /* 간격 */
@@ -95,10 +96,16 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .skip-link:focus { top: var(--sp-2); }
 
 /* 3. 타이포 ---------------------------------------------- */
-.display, .h2, .h3 { color: var(--c-ink); font-weight: 700; letter-spacing: var(--ls-tight); line-height: var(--lh-tight); }
-.display { font-size: var(--fs-display); font-weight: 600; line-height: var(--lh-tight); }
+.display, .h2, .h3 { color: var(--c-ink); }
+/* 페이지별 제목 크기는 유지하고 굵기와 간격을 통일한다. */
+html body :is(h1, h2, h3, h4, h5, h6, .display, .h2, .h3, .way__title, .post-empty__title, .site-footer__title) {
+  font-weight: 700;
+  letter-spacing: var(--ls-title);
+  line-height: var(--lh-title);
+}
+.display { font-size: var(--fs-display); }
 .h2 { font-size: var(--fs-h2); }
-.h3 { font-size: var(--fs-h3); letter-spacing: 0; line-height: 1.5; }
+.h3 { font-size: var(--fs-h3); }
 .accent { color: var(--c-point); }          /* 큰 글씨 전용 주황 */
 .lead { font-size: var(--fs-lead); color: var(--c-muted); line-height: 1.6; font-weight: 400; }
 .small { font-size: var(--fs-small); color: var(--c-muted); }
@@ -144,11 +151,11 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .btn--primary { background: var(--c-point); color: #fff; }
 .btn--primary::after, .btn--primary::before { color: var(--c-ink); }
 .btn--primary:hover { background: var(--c-point-hover); }
-.btn--ghost { background: var(--c-bg-soft); color: var(--c-ink); }
+.btn--ghost { background: var(--c-bg-soft); color: var(--c-ink); font-size: var(--fs-body); }
 .btn--ghost:hover { background: #ececec; }
 .btn--light { background: #fff; color: var(--c-ink); }
 .btn-group { display: flex; flex-wrap: wrap; gap: var(--sp-2) calc(var(--sp-4) + 8px); align-items: center; }
-.btn-note { margin-top: var(--sp-2); font-size: var(--fs-small); color: var(--c-muted); }
+.btn-note { margin-top: var(--sp-2); font-size: var(--fs-note); color: var(--c-muted); }
 
 .link-arrow {                                   /* "사례 전체 보기 →" 같은 글자 링크 */
   display: inline-flex; align-items: center; gap: 0.75rem;
@@ -288,7 +295,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .page-intro__inner { display: grid; gap: var(--sp-5); }
 .page-intro__kicker {
   display: flex; align-items: center; gap: 0.75rem; margin-bottom: var(--sp-3);
-  font-size: var(--fs-small); font-weight: 600; color: var(--c-muted);
+  font-size: var(--fs-note); font-weight: 600; color: var(--c-muted);
 }
 .page-intro__kicker::before { content: ""; width: 28px; height: 2px; background: var(--c-point); flex: none; }
 .page-intro__lead { margin-top: var(--sp-3); }

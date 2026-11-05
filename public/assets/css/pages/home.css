@@ -25,14 +25,9 @@ main { overflow-x: clip; }
 
 .hero__kicker {
   display: flex; align-items: center; gap: 0.75rem; margin-bottom: var(--sp-3);
-  font-size: var(--fs-small); font-weight: 600; color: var(--c-muted); letter-spacing: 0.02em;
+  font-size: var(--fs-note); font-weight: 600; color: var(--c-muted); letter-spacing: 0.02em;
 }
 .hero__kicker::before { content: ""; width: 28px; height: 2px; background: var(--c-point); flex: none; }
-h1.hero__title {
-  font-weight: 700;
-  letter-spacing: -0.2px;
-  line-height: 1.3;
-}
 .hero__title .line, .hero__title .accent { display: block; white-space: nowrap; }
 .hero__lead { margin-top: var(--sp-3); }
 .hero__cta { margin-top: var(--sp-5); }
@@ -154,7 +149,7 @@ h1.hero__title {
 .cases__foot .rail-nav { margin-left: auto; }
 
 /* 7. 사장님 후기 (지금은 hidden) ------------------------- */
-.voice__item blockquote p { font-size: var(--fs-h2); font-weight: 600; color: var(--c-ink); letter-spacing: var(--ls-tight); line-height: 1.4; }
+.voice__item blockquote p { font-size: var(--fs-h2); font-weight: 600; color: var(--c-ink); letter-spacing: 0; line-height: 1.4; }
 .voice__item figcaption { margin-top: var(--sp-3); color: var(--c-muted); }
 
 /* 8. 홍보 영상 ------------------------------------------- */
